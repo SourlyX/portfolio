@@ -1,13 +1,17 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Container from './Container';
+import Footer from './Footer';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./index.css"
 
 const MainApp = styled.div`
   background-color: #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `
 
 function App() {
@@ -40,13 +44,11 @@ function App() {
       </Helmet>
       <Navbar items={navbarItems}/>
       <Routes>
-        <Route path="/" element={
-          <div>
-            <Container cards={cards} />
-          </div>}/>
-        <Route path="/about" element={<div></div>}/>
+        <Route path="/" element={<Container cards={cards} />}/>
+        <Route path="/about" element={<div></div>}/> {/* Description, que me diferencia del resto, Technologies, hardskills, softskills, contact */}
         <Route path="*" element="404: ruta no encontrada"/>
       </Routes>
+      <Footer />
     </MainApp>
   )
 }
