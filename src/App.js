@@ -31,12 +31,12 @@ function App() {
 
   const frontendCards = [
     {
-      image: 'https://example.com/image3.jpg',
+      image: 'public/images/skills.html5.png',
       title: 'HTML5',
       description: 'Descripción de HTML5'
     },
     {
-      image: 'https://example.com/image4.jpg',
+      image: '/imagenes/skills/CSS3.png',
       title: 'CSS3',
       description: 'Descripción de CSS3'
     },
@@ -45,6 +45,11 @@ function App() {
       title: 'JavaScript',
       description: 'Descripción de JavaScript'
     }
+  ]
+
+  const softSkills = [
+    {
+          }
   ]
 
   const navbarItems = [
@@ -67,11 +72,11 @@ function App() {
           <>
             {cards && cards.length > 0 && <Container cards={cards} title="Titulo 1" />}
             {frontendCards && frontendCards.length > 0 && <Container cards={frontendCards} title="Technical Skills" />}
-            {frontendCards && frontendCards.length > 0 && <Container cards={frontendCards} title="Soft Skills" />}
+            {softSkills && softSkills.length > 0 && <Container cards={softSkills} title="Soft Skills" />}
           </>
         }/>
         <Route path="/about" element={<About />} /> {/* Agrega el componente About a la ruta '/about' */}
-        <Route path="*" element="404: route not find"/>
+        <Route path="*" element="404: route not found"/>
       </Routes>
       <Footer />
     </MainApp>
