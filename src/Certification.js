@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const CertificationContainer = styled.div`
   margin-bottom: 20px;
-  background-color: #f5f5f5;
+  background-color: #404040;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   width: 20%;
@@ -11,26 +11,30 @@ const CertificationContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 7px;
   position: relative;
-`;
+  height: 250px;
+`
 
 const Title = styled.h4`
+  margin-top: 0px;
   margin-bottom: 5px;
   text-align: center;
-`;
+`
 
 const Company = styled.p`
   margin-bottom: 5px;
-`;
+`
 
 const Date = styled.p`
   margin-bottom: 5px;
-`;
+`
 
 const CredentialId = styled.p`
+  text-align: center;
   margin-bottom: 5px;
-`;
+`
 
 const ImageButton = styled.button`
   background-color: #007bff;
@@ -44,11 +48,7 @@ const ImageButton = styled.button`
   &:hover {
     background-color: #0056b3;
   }
-`;
-
-const Aptitudes = styled.p`
-  margin-bottom: 5px;
-`;
+`
 
 const ImageOverlay = styled.div`
   position: fixed;
@@ -59,7 +59,7 @@ const ImageOverlay = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 999;
   display: ${props => (props.show ? 'block' : 'none')};
-`;
+`
 
 const ImageContainer = styled.div`
   position: absolute;
@@ -68,7 +68,7 @@ const ImageContainer = styled.div`
   transform: translate(-50%, -50%);
   max-width: 90%;
   max-height: 90%;
-`;
+`
 
 const CloseButton = styled.button`
   position: absolute;
@@ -79,23 +79,23 @@ const CloseButton = styled.button`
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
-`;
+`
 
 const Image = styled.img`
   max-width: 700px;
   height: auto;
-`;
+`
 
-const Certification = ({ title, company, date, credentialId, imagePath, aptitudes }) => {
+const Certification = ({ title, company, date, credentialId, imagePath }) => {
   const [showImage, setShowImage] = useState(false);
 
   const handleImageClick = () => {
     setShowImage(true);
-  };
+  }
 
   const handleCloseImage = () => {
     setShowImage(false);
-  };
+  }
 
   return (
     <CertificationContainer>
@@ -104,7 +104,6 @@ const Certification = ({ title, company, date, credentialId, imagePath, aptitude
       <Date>Issued Date: {date}</Date>
       <CredentialId>Credential ID: {credentialId}</CredentialId>
       <ImageButton onClick={handleImageClick}>Show Credential Image</ImageButton>
-      <Aptitudes>Aptitudes: {aptitudes}</Aptitudes>
       {showImage && (
         <ImageOverlay show={showImage}>
           <ImageContainer>
@@ -114,7 +113,7 @@ const Certification = ({ title, company, date, credentialId, imagePath, aptitude
         </ImageOverlay>
       )}
     </CertificationContainer>
-  );
-};
+  )
+}
 
 export default Certification;

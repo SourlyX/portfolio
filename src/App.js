@@ -65,8 +65,9 @@ function App() {
       <Routes>
         <Route path="/" element={
           <>
-            {cards && cards.length > 0 && <Container cards={cards} />}
-            {frontendCards && frontendCards.length > 0 && <Container cards={frontendCards} />}
+            {cards && cards.length > 0 && <Container cards={cards} title="Titulo 1" />}
+            {frontendCards && frontendCards.length > 0 && <Container cards={frontendCards} title="Technical Skills" />}
+            {frontendCards && frontendCards.length > 0 && <Container cards={frontendCards} title="Soft Skills" />}
           </>
         }/>
         <Route path="/about" element={<About />} /> {/* Agrega el componente About a la ruta '/about' */}

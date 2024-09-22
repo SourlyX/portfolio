@@ -159,10 +159,12 @@ const certificationsData = [
 
 const AboutPageContainer = styled.div`
   padding: 20px;
+  height: auto;
   color: #fff;
 `;
 
 const Cert = styled.div`
+  background-color: #222;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -181,7 +183,7 @@ const AboutPage = () => {
       <h1>About Me</h1>
       <SectionTitle>Brief Introduction</SectionTitle>
       <p>
-        Hardworking and dedicated; capable of meeting or exceeding job expectations. Quick learner and eager to continue learning. Self-disciplined. Able to work efficiently with small or large groups of people.
+        Hi, my name is Luis Ureña. I'm a sel-taugh programmer because since I was a little kid I wanted to learn how computers work, so programming was my gol when I became an adult.<br></br><br></br>I'm a hardworking and dedicated person; capable of meeting or exceeding job expectations. Quick learner and eager to continue learning. Self-disciplined. Able to work efficiently with small or large groups of people.
       </p>
       <SectionTitle>Professional Experience</SectionTitle>
       <p>
