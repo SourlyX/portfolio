@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Nav = styled.nav`
   background-color: none;
-  color: #75E4D7;
+  color: #D34846;
   width: 100%;
   border: 1px solid;
   border-radius: 50px;
@@ -52,7 +52,7 @@ const Link = styled.a`
   text-decoration: none;
   padding: 10px;
   margin: -10px;
-  background-color: #E3D18A;
+  background-color: #F6D0AA;
   border-radius: 50%;
 `
 

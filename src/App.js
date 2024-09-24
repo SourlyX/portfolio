@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet'
 import { Routes, Route } from "react-router-dom"
 
 const MainApp = styled.div`
-  background-color: #222;
+  background-color: #525248;
   display: flex;
   flex-wrap: wrap;
   justify-content: center
@@ -28,24 +28,25 @@ function App() {
       description: 'Descripción de la tarjeta 2'
     }
   ]
-
+  
   const frontendCards = [
     {
-      image: 'public/images/skills.html5.png',
+      image: 'images/skills/HTML5.png',
       title: 'HTML5',
       description: 'Descripción de HTML5'
     },
     {
-      image: '/imagenes/skills/CSS3.png',
+      image: 'images/skills/CSS3.png', // Corrige la barra invertida
       title: 'CSS3',
       description: 'Descripción de CSS3'
     },
     {
-      image: 'https://example.com/image5.jpg',
+      image: 'images/skills/JS.png',
       title: 'JavaScript',
       description: 'Descripción de JavaScript'
     }
-  ]
+  ];
+  
 
   const softSkills = [
     {
