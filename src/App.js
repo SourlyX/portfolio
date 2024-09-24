@@ -1,14 +1,15 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Container from './Container'
-import Footer from './Footer'
-import styled from 'styled-components'
-import About from './About' // Importa el componente About
+import React from "react"
+import Navbar from "./Navbar"
+import Container from "./Container"
+import Footer from "./Footer"
+import styled from "styled-components"
+import About from "./About" // Importa el componente About
 import "./index.css"
-import { Helmet } from 'react-helmet'
+import { Helmet } from "react-helmet"
 import { Routes, Route } from "react-router-dom"
 
 const MainApp = styled.div`
+  color: white;
   background-color: #525248;
   display: flex;
   flex-wrap: wrap;
@@ -18,32 +19,72 @@ const MainApp = styled.div`
 function App() {
   const cards = [
     {
-      image: 'https://example.com/image1.jpg',
-      title: 'Título de la tarjeta 1',
-      description: 'Descripción de la tarjeta 1'
+      image: "https://example.com/image1.jpg",
+      title: "Título de la tarjeta 1",
+      description: "Descripción de la tarjeta 1"
     },
     {
-      image: 'https://example.com/image2.jpg',
-      title: 'Título de la tarjeta 2',
-      description: 'Descripción de la tarjeta 2'
+      image: "https://example.com/image2.jpg",
+      title: "Título de la tarjeta 2",
+      description: "Descripción de la tarjeta 2"
     }
   ]
   
   const frontendCards = [
     {
-      image: 'images/skills/HTML5.png',
-      title: 'HTML5',
-      description: 'Descripción de HTML5'
+      image: "images/skills/HTML5.png",
+      title: "HTML5",
+      description: "I use HTML5 to structure my web applications. It provides me with the foundation to create responsive, semantic, and accessible websites. By leveraging elements like <header>, <footer>, and <section>, I ensure my projects are both modern and organized."
     },
     {
-      image: 'images/skills/CSS3.png', // Corrige la barra invertida
-      title: 'CSS3',
-      description: 'Descripción de CSS3'
+      image: "images/skills/JS.png",
+      title: "JavaScript",
+      description: "I rely on JavaScript to handle client-side interactivity and logic. Whether it's manipulating the DOM, fetching data via APIs, or adding dynamic behavior, JavaScript allows me to create rich user experiences and responsive features in my projects."
     },
     {
-      image: 'images/skills/JS.png',
-      title: 'JavaScript',
-      description: 'Descripción de JavaScript'
+      image: "images/skills/CSS3.png",
+      title: "CSS3",
+      description: "With CSS3, I style and enhance the visual appeal of my projects. I utilize Flexbox and Grid for layout design, and I frequently apply animations, transitions, and media queries to make my sites responsive and interactive across different devices."
+    },
+    {
+      image: "images/skills/React.png",
+      title: "React",
+      description: "React is my go-to framework for building dynamic and scalable front-end applications. I use it to manage complex UI components, handle state efficiently, and create reusable pieces of code that speed up development. Hooks and the component-based architecture make building interactive UIs much smoother."
+    },
+    {
+      image: "images/skills/Jira.png",
+      title: "Jira",
+      description: "I’ve used Jira extensively for task management and tracking in both academic group projects and professional settings. It allows me to plan, assign, and monitor progress efficiently, helping to ensure that deadlines are met and tasks are completed in an organized way."
+    },
+    {
+      image: "images/skills/Git.png",
+      title: "Git",
+      description: "I use Git for version control in all my projects. It helps me track changes, collaborate on code with others, and manage different branches efficiently. Through Git, I ensure that my codebase is safe and that I can always roll back to a stable version if needed."
+    },
+    {
+      image: "images/skills/Scrum.png",
+      title: "Scrum",
+      description: "In both university group projects and my role as a QA, I follow Scrum methodologies. I participate in sprints, daily stand-ups, and retrospectives, helping ensure that the development process is iterative and focused on delivering value."
+    },
+    {
+      image: "images/skills/ASP.png",
+      title: "ASP.Net",
+      description: "For back-end development, I use ASP.NET to create scalable web applications. Whether it’s building RESTful services or dynamic server-side rendering, ASP.NET allows me to handle the heavy lifting behind the scenes with its robust framework."
+    },
+    {
+      image: "images/skills/Python.png",
+      title: "Python",
+      description: "Python is my tool of choice for scripting, automating tasks, and building back-end services. I’ve used it in various capacities, from developing RESTful APIs to data manipulation and analysis. Its versatility makes it indispensable in my development process."
+    },
+    {
+      image: "images/skills/SQL.png",
+      title: "SQL",
+      description: "SQL is essential for managing and querying relational databases in my projects. I use it to store, retrieve, and manipulate data, ensuring that my applications can efficiently access the information they need, whether it’s through MySQL or SQL Server."
+    },
+    {
+      image: "images/skills/MongoDB.png",
+      title: "MongoDB",
+      description: "I turn to MongoDB when I need a NoSQL solution for projects that require flexibility in data storage. I use it to manage large datasets and unstructured data, ensuring my applications can handle real-time, fast, and scalable operations."
     }
   ];
   
@@ -54,10 +95,10 @@ function App() {
   ]
 
   const navbarItems = [
-    { label: 'Home', url: '/' },
-    { label: 'About', url: '/about' },
-    { label: 'Projects', url: '/projects' },
-    { label: 'Contact', url: '/contact' }
+    { label: "Home", url: "/" },
+    { label: "About", url: "/about" },
+    { label: "Projects", url: "/projects" },
+    { label: "Contact", url: "/contact" }
   ]
   
   return (
@@ -76,7 +117,7 @@ function App() {
             {softSkills && softSkills.length > 0 && <Container cards={softSkills} title="Soft Skills" />}
           </>
         }/>
-        <Route path="/about" element={<About />} /> {/* Agrega el componente About a la ruta '/about' */}
+        <Route path="/about" element={<About />} /> {/* Agrega el componente About a la ruta "/about" */}
         <Route path="*" element="404: route not found"/>
       </Routes>
       <Footer />

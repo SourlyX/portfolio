@@ -164,7 +164,7 @@ const AboutPageContainer = styled.div`
 `;
 
 const Cert = styled.div`
-  background-color: #222;
+  background-color: #525248;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Card = styled.div`
-  min-width: 100px;
-  max-width: 300px;
+  width: 27%;
+  color: #464A6D;
   flex-grow: 1;
   background-color: #f6d0aa;
   border-radius: 8px;
@@ -29,7 +29,7 @@ const CardTitle = styled.h3`
 `
 
 const CardDescription = styled.div`
-  max-width: 200px;
+  max-width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
