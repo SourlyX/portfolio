@@ -18,7 +18,8 @@ const Card = styled.div`
 `
 
 const CardImage = styled.img`
-  width: 75px;
+  width: 25%;
+  max-width: 125px;
   height: auto;
   border-radius: 8px;
 `

@@ -10,7 +10,7 @@ import { Routes, Route } from "react-router-dom"
 
 const MainApp = styled.div`
   color: white;
-  background-color: #525248;
+  background-color: #121212;
   display: flex;
   flex-wrap: wrap;
   justify-content: center
@@ -91,112 +91,112 @@ function App() {
 
   const softSkills = [
     {
-      image: "images/softskills/ProblemSolving.png",
+      image: "images/softskills/problemSolving.jpeg",
       title: "Problem-solving" ,
       description: "Ability to identify, analyze, and solve issues effectively."
     },
     {
-      image: "",
+      image: "images/softskills/criticalThinking.jpeg",
       title: "Critical thinking" ,
       description: "Analyzing problems from different angles and making informed decisions."
     },
     {
-      image: "",
+      image: "images/softskills/creativity.jpeg",
       title: "Creativity" ,
       description: "Thinking outside the box to develop innovative solutions to complex problems."
     },
     {
-      image: "",
+      image: "images/softskills/attentionDetail.jpeg",
       title: "Attention to detail" ,
       description: "Spotting bugs, errors, and inconsistencies while maintaining high code quality."
     },
     {
-      image: "",
+      image: "images/softskills/priotization.jpeg",
       title: "Prioritization" ,
       description: "Determining which tasks are most important and focusing on them to meet project goals and deadlines efficiently."
     },
     {
-      image: "",
+      image: "images/softskills/resourcefulness.jpeg",
       title: "Resourcefulness" ,
       description: "Finding creative solutions and utilizing available resources efficiently when faced with challenges."
     },
     {
-      image: "",
+      image: "images/softskills/continuousLearning.jpeg",
       title: "Continuous learning" ,
       description: "Keeping up with evolving technologies and constantly improving skills."
     },
     {
-      image: "",
+      image: "images/softskills/curiosity.jpeg",
       title: "Curiosity" ,
       description: "A natural desire to explore new technologies, tools, and methods to improve your craft."
     },
     {
-      image: "",
+      image: "images/softskills/resilience.jpeg",
       title: "Resilience" ,
       description: "Ability to bounce back from setbacks and stay motivated through tough projects or when facing failure."
     },
     {
-      image: "",
+      image: "images/softskills/adaptabilityFeedback.jpeg",
       title: "Adaptability to feedback" ,
       description: "Accepting and applying constructive criticism to improve performance and code quality."
     },
     {
-      image: "",
+      image: "images/softskills/timeManagement.jpeg",
       title: "Time management" ,
       description: "Efficiently managing time, deadlines, and workloads."
     },
     {
-      image: "",
+      image: "images/softskills/collaboration.jpeg",
       title: "Collaboration" ,
       description: "Working well within a team, contributing to group efforts, and supporting colleagues."
     },
     {
-      image: "",
+      image: "images/softskills/communication.jpeg",
       title: "Communication" ,
       description: "Clear and concise verbal and written communication with both technical and non-technical stakeholders."
     },
     {
-      image: "",
+      image: "images/softskills/patience.jpeg",
       title: "Patience" ,
       description: "Remaining calm and persistent when debugging or facing challenges."
     },
     {
-      image: "",
+      image: "images/softskills/openMindedness.jpeg",
       title: "Open-mindedness" ,
       description: "Being receptive to feedback and different perspectives, especially in code reviews or team discussions."
     },
     {
-      image: "",
+      image: "images/softskills/selfMotivation.jpeg",
       title: "Self-motivation" ,
       description: "Driving your own learning and progress without needing constant supervision or external motivation."
     },
     {
-      image: "",
+      image: "images/softskills/stressManagement.jpeg",
       title: "Stress management" ,
       description: "Handling high-pressure situations, like tight deadlines or complex issues, without compromising performance."
     },
     {
-      image: "",
+      image: "images/softskills/humility.jpeg",
       title: "Humility" ,
       description: "Recognizing that you don’t know everything, being open to learning from others, and admitting mistakes when necessary."
     },
     {
-      image: "",
+      image: "images/softskills/workEthic.jpeg",
       title: "Work ethic" ,
       description: "Demonstrating dedication, discipline, and a strong commitment to completing tasks effectively."
     },
     {
-      image: "",
+      image: "images/softskills/listeningSkills.jpeg",
       title: "Listening skills" ,
       description: "Actively paying attention to others' ideas, concerns, and feedback, ensuring better collaboration and understanding."
     },
     {
-      image: "",
+      image: "images/softskills/Networking.jpeg",
       title: "Networking" ,
       description: "Building professional relationships within and outside the company to share knowledge, seek guidance, and explore new opportunities."
     },
     {
-      image: "",
+      image: "images/softskills/empathy.jpeg",
       title: "Empathy" ,
       description: "Understanding the needs and emotions of users, clients, and team members to create better solutions and foster positive relationships."
     }
@@ -225,7 +225,7 @@ function App() {
             {softSkills && softSkills.length > 0 && <Container cards={softSkills} title="Soft Skills" />}
           </>
         }/>
-        <Route path="/about" element={<About />} /> {/* Agrega el componente About a la ruta "/about" */}
+        <Route path="/about" element={<About />} />
         <Route path="*" element="404: route not found"/>
       </Routes>
       <Footer />
