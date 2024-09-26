@@ -91,7 +91,115 @@ function App() {
 
   const softSkills = [
     {
-          }
+      image: "images/softskills/ProblemSolving.png",
+      title: "Problem-solving" ,
+      description: "Ability to identify, analyze, and solve issues effectively."
+    },
+    {
+      image: "",
+      title: "Critical thinking" ,
+      description: "Analyzing problems from different angles and making informed decisions."
+    },
+    {
+      image: "",
+      title: "Creativity" ,
+      description: "Thinking outside the box to develop innovative solutions to complex problems."
+    },
+    {
+      image: "",
+      title: "Attention to detail" ,
+      description: "Spotting bugs, errors, and inconsistencies while maintaining high code quality."
+    },
+    {
+      image: "",
+      title: "Prioritization" ,
+      description: "Determining which tasks are most important and focusing on them to meet project goals and deadlines efficiently."
+    },
+    {
+      image: "",
+      title: "Resourcefulness" ,
+      description: "Finding creative solutions and utilizing available resources efficiently when faced with challenges."
+    },
+    {
+      image: "",
+      title: "Continuous learning" ,
+      description: "Keeping up with evolving technologies and constantly improving skills."
+    },
+    {
+      image: "",
+      title: "Curiosity" ,
+      description: "A natural desire to explore new technologies, tools, and methods to improve your craft."
+    },
+    {
+      image: "",
+      title: "Resilience" ,
+      description: "Ability to bounce back from setbacks and stay motivated through tough projects or when facing failure."
+    },
+    {
+      image: "",
+      title: "Adaptability to feedback" ,
+      description: "Accepting and applying constructive criticism to improve performance and code quality."
+    },
+    {
+      image: "",
+      title: "Time management" ,
+      description: "Efficiently managing time, deadlines, and workloads."
+    },
+    {
+      image: "",
+      title: "Collaboration" ,
+      description: "Working well within a team, contributing to group efforts, and supporting colleagues."
+    },
+    {
+      image: "",
+      title: "Communication" ,
+      description: "Clear and concise verbal and written communication with both technical and non-technical stakeholders."
+    },
+    {
+      image: "",
+      title: "Patience" ,
+      description: "Remaining calm and persistent when debugging or facing challenges."
+    },
+    {
+      image: "",
+      title: "Open-mindedness" ,
+      description: "Being receptive to feedback and different perspectives, especially in code reviews or team discussions."
+    },
+    {
+      image: "",
+      title: "Self-motivation" ,
+      description: "Driving your own learning and progress without needing constant supervision or external motivation."
+    },
+    {
+      image: "",
+      title: "Stress management" ,
+      description: "Handling high-pressure situations, like tight deadlines or complex issues, without compromising performance."
+    },
+    {
+      image: "",
+      title: "Humility" ,
+      description: "Recognizing that you don’t know everything, being open to learning from others, and admitting mistakes when necessary."
+    },
+    {
+      image: "",
+      title: "Work ethic" ,
+      description: "Demonstrating dedication, discipline, and a strong commitment to completing tasks effectively."
+    },
+    {
+      image: "",
+      title: "Listening skills" ,
+      description: "Actively paying attention to others' ideas, concerns, and feedback, ensuring better collaboration and understanding."
+    },
+    {
+      image: "",
+      title: "Networking" ,
+      description: "Building professional relationships within and outside the company to share knowledge, seek guidance, and explore new opportunities."
+    },
+    {
+      image: "",
+      title: "Empathy" ,
+      description: "Understanding the needs and emotions of users, clients, and team members to create better solutions and foster positive relationships."
+    }
   ]
 
   const navbarItems = [

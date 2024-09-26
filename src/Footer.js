@@ -38,10 +38,10 @@ const LogoImage = styled.img`
 
 const Footer = () => {
   const datos = {
-    nombre: 'Luis Ureña Arosemena',
-    correo: 'luisferua@gmail.com',
-    telefono: '+506 6005 7935',
-    redesSociales: {
+    name: 'Luis Ureña Arosemena',
+    email: 'luisferua@gmail.com',
+    phone: '+506 6005 7935',
+    socialMedia: {
       linkedin: 'https://www.linkedin.com/in/luis-ure%C3%B1a-arosemena-501105211',
       github: 'https://github.com/SourlyX',
       facebook: 'https://www.facebook.com/Luis.Urena.judo/',
@@ -52,22 +52,22 @@ const Footer = () => {
   return (
     <FooterContainer>
       <Column>
-        <h3>Contacto:</h3>
-        <p>Nombre: {datos.nombre}</p>
-        <p>Correo: {datos.correo}</p>
-        <p>Teléfono: {datos.telefono}</p>
+        <h3>Contact:</h3>
+        <p>Name: {datos.name}</p>
+        <p>E-mail: {datos.email}</p>
+        <p>Phone: {datos.phone}</p>
       </Column>
       <Column>
-        <h3>Redes Sociales:</h3>
+        <h3>Social Media:</h3>
         <SocialMediaLinks>
-          <SocialMediaLink href={datos.redesSociales.linkedin}><LogoImage src="/images/linkedin.png" alt="Facebook" /></SocialMediaLink>
-          <SocialMediaLink href={datos.redesSociales.github}><LogoImage src="/images/github.png" alt="Facebook" /></SocialMediaLink>
-          <SocialMediaLink href={datos.redesSociales.facebook}><LogoImage src="/images/facebook.png" alt="Facebook" /></SocialMediaLink>
-          <SocialMediaLink href={datos.redesSociales.twitter}><LogoImage src="/images/twitter.png" alt="Twitter" /></SocialMediaLink>
+          <SocialMediaLink href={datos.socialMedia.linkedin}><LogoImage src="/images/linkedin.png" alt="Facebook" /></SocialMediaLink>
+          <SocialMediaLink href={datos.socialMedia.github}><LogoImage src="/images/github.png" alt="Facebook" /></SocialMediaLink>
+          <SocialMediaLink href={datos.socialMedia.facebook}><LogoImage src="/images/facebook.png" alt="Facebook" /></SocialMediaLink>
+          <SocialMediaLink href={datos.socialMedia.twitter}><LogoImage src="/images/twitter.png" alt="Twitter" /></SocialMediaLink>
         </SocialMediaLinks>
       </Column>
         <div>
-          <p>&copy; {new Date().getFullYear()} {datos.nombre}</p>
+          <p>&copy; {new Date().getFullYear()} {datos.name}</p>
         </div>
     </FooterContainer>
   )

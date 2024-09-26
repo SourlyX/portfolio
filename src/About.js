@@ -1,159 +1,159 @@
-import React from 'react';
-import styled from 'styled-components';
-import Certification from './Certification';
+import React from "react";
+import styled from "styled-components";
+import Certification from "./Certification";
 
 const certificationsData = [
   {
-    title: 'Build Apps Using React: Introducing React for Web Applications',
-    company: 'Skillsoft',
-    date: 'Aug. 2023',
-    credentialId: '5523621',
-    imagePath: '/images/certifications/Build Apps Using React Introducing React for Web Applications.png',
-    skills: 'Computer Science'
+    title: "Build Apps Using React: Introducing React for Web Applications",
+    company: "Skillsoft",
+    date: "Aug. 2023",
+    credentialId: "5523621",
+    imagePath: "/images/certifications/Build Apps Using React Introducing React for Web Applications.png",
+    skills: "Computer Science"
   },
   {
-    title: 'Build Apps Using React: Local Machine & Online Playgrounds',
-    company: 'Skillsoft',
-    date: 'Aug. 2023',
-    credentialId: '5523692',
-    imagePath: '/images/certifications/Build Apps Using React Local Machine & Online Playgrounds.png',
-    skills: 'Computer Science'
+    title: "Build Apps Using React: Local Machine & Online Playgrounds",
+    company: "Skillsoft",
+    date: "Aug. 2023",
+    credentialId: "5523692",
+    imagePath: "/images/certifications/Build Apps Using React Local Machine & Online Playgrounds.png",
+    skills: "Computer Science"
   },
   {
-    title: 'Navigating Software Testing Tools: Types of Software Testing Tools',
-    company: 'Skillsoft',
-    date: 'Aug. 2023',
-    credentialId: '5509961',
-    imagePath: '/images/certifications/Navigating Software Testing Tools Types of Software Testing Tools.png',
-    skills: 'Computer Science'
+    title: "Navigating Software Testing Tools: Types of Software Testing Tools",
+    company: "Skillsoft",
+    date: "Aug. 2023",
+    credentialId: "5509961",
+    imagePath: "/images/certifications/Navigating Software Testing Tools Types of Software Testing Tools.png",
+    skills: "Computer Science"
   },
   {
-    title: '.NET Development with Visual Studio',
-    company: 'Skillsoft',
-    date: 'Jul. 2023',
-    credentialId: '5421308',
-    imagePath: '/images/certifications/NET Development with Visual Studio.png',
-    skills: 'C# · .NET Framework · Computer Science'
+    title: ".NET Development with Visual Studio",
+    company: "Skillsoft",
+    date: "Jul. 2023",
+    credentialId: "5421308",
+    imagePath: "/images/certifications/NET Development with Visual Studio.png",
+    skills: "C# · .NET Framework · Computer Science"
   },
   {
-    title: 'ASP.NET MVC Web Applications: Introduction',
-    company: 'Skillsoft',
-    date: 'Jul. 2023',
-    credentialId: '5509907',
-    imagePath: '/images/certifications/ASP.NET MVC Web Applications Introduction.png',
-    skills: 'C# · .NET Framework · Computer Science'
+    title: "ASP.NET MVC Web Applications: Introduction",
+    company: "Skillsoft",
+    date: "Jul. 2023",
+    credentialId: "5509907",
+    imagePath: "/images/certifications/ASP.NET MVC Web Applications Introduction.png",
+    skills: "C# · .NET Framework · Computer Science"
   },
   {
-    title: 'HTML5 with JavaScript & CSS3: Advanced CSS',
-    company: 'Skillsoft',
-    date: 'Jul. 2023',
-    credentialId: '5351755',
-    imagePath: '/images/certifications/HTML5 with JavaScript & CSS3 Advanced CSS.png',
-    skills: 'Computer Science'
+    title: "HTML5 with JavaScript & CSS3: Advanced CSS",
+    company: "Skillsoft",
+    date: "Jul. 2023",
+    credentialId: "5351755",
+    imagePath: "/images/certifications/HTML5 with JavaScript & CSS3 Advanced CSS.png",
+    skills: "Computer Science"
   },
   {
-    title: 'MEAN Stack Development',
-    company: 'Skillsoft',
-    date: 'Jul. 2023',
-    credentialId: '5313125',
-    imagePath: '/images/certifications/MEAN Stack Development.png',
-    skills: 'Computer Science'
+    title: "MEAN Stack Development",
+    company: "Skillsoft",
+    date: "Jul. 2023",
+    credentialId: "5313125",
+    imagePath: "/images/certifications/MEAN Stack Development.png",
+    skills: "Computer Science"
   },
   {
-    title: 'MongoDB Aggregation',
-    company: 'Skillsoft',
-    date: 'Jul. 2023',
-    credentialId: '5367339',
-    imagePath: '/images/certifications/MongoDB Aggregation.png',
-    skills: 'Computer Science'
+    title: "MongoDB Aggregation",
+    company: "Skillsoft",
+    date: "Jul. 2023",
+    credentialId: "5367339",
+    imagePath: "/images/certifications/MongoDB Aggregation.png",
+    skills: "Computer Science"
   },
   {
-    title: 'MongoDB Querying',
-    company: 'Skillsoft',
-    date: 'Jul. 2023',
-    credentialId: '5302759',
-    imagePath: '/images/certifications/MongoDB Querying.png',
-    skills: 'Computer Science'
+    title: "MongoDB Querying",
+    company: "Skillsoft",
+    date: "Jul. 2023",
+    credentialId: "5302759",
+    imagePath: "/images/certifications/MongoDB Querying.png",
+    skills: "Computer Science"
   },
   {
-    title: 'REST API with Java: REST APIs with POSTMAN & CRUD',
-    company: 'Skillsoft',
-    date: 'Jul. 2023',
-    credentialId: '5367975',
-    imagePath: '/images/certifications/REST API with Java REST APIs with POSTMAN & CRUD.png',
-    skills: 'Computer Science'
+    title: "REST API with Java: REST APIs with POSTMAN & CRUD",
+    company: "Skillsoft",
+    date: "Jul. 2023",
+    credentialId: "5367975",
+    imagePath: "/images/certifications/REST API with Java REST APIs with POSTMAN & CRUD.png",
+    skills: "Computer Science"
   },
   {
-    title: 'AWS Developer Associate 2022: Amazon Elastic Compute Cloud (EC2)',
-    company: 'Skillsoft',
-    date: 'Jun. 2023',
-    credentialId: '5010674',
-    imagePath: '/images/certifications/AWS Developer Associate 2022 Amazon Elastic Compute Cloud (EC2).png',
-    skills: 'Computer Science · Amazon Web Services (AWS)'
+    title: "AWS Developer Associate 2022: Amazon Elastic Compute Cloud (EC2)",
+    company: "Skillsoft",
+    date: "Jun. 2023",
+    credentialId: "5010674",
+    imagePath: "/images/certifications/AWS Developer Associate 2022 Amazon Elastic Compute Cloud (EC2).png",
+    skills: "Computer Science · Amazon Web Services (AWS)"
   },
   {
-    title: 'Introduction to Git',
-    company: 'Skillsoft',
-    date: 'Jun. 2023',
-    credentialId: '5086974',
-    imagePath: '/images/certifications/Introduction to Git.png',
-    skills: 'Computer Science'
+    title: "Introduction to Git",
+    company: "Skillsoft",
+    date: "Jun. 2023",
+    credentialId: "5086974",
+    imagePath: "/images/certifications/Introduction to Git.png",
+    skills: "Computer Science"
   },
   {
-    title: 'Jenkins for DevOps: The Basics of Jenkins',
-    company: 'Skillsoft',
-    date: 'Jun. 2023',
-    credentialId: '5073564',
-    imagePath: '/images/certifications/Jenkins for DevOps The Basics of Jenkins.png',
-    skills: 'Computer Science'
+    title: "Jenkins for DevOps: The Basics of Jenkins",
+    company: "Skillsoft",
+    date: "Jun. 2023",
+    credentialId: "5073564",
+    imagePath: "/images/certifications/Jenkins for DevOps The Basics of Jenkins.png",
+    skills: "Computer Science"
   },
   {
-    title: 'Scrum Foundation: Scrum Certification & the Scrum Guide',
-    company: 'Skillsoft',
-    date: 'Jun. 2023',
-    credentialId: '5021856',
-    imagePath: '/images/certifications/Scrum Foundation Scrum Certification & the Scrum Guide.png',
-    skills: 'Computer Science'
+    title: "Scrum Foundation: Scrum Certification & the Scrum Guide",
+    company: "Skillsoft",
+    date: "Jun. 2023",
+    credentialId: "5021856",
+    imagePath: "/images/certifications/Scrum Foundation Scrum Certification & the Scrum Guide.png",
+    skills: "Computer Science"
   },
   {
-    title: 'Scrum Toolbox: Jira for Scrum',
-    company: 'Skillsoft',
-    date: 'Jun. 2023',
-    credentialId: '5042690',
-    imagePath: '/images/certifications/Scrum Toolbox Jira for Scrum.png',
-    skills: 'Computer Science'
+    title: "Scrum Toolbox: Jira for Scrum",
+    company: "Skillsoft",
+    date: "Jun. 2023",
+    credentialId: "5042690",
+    imagePath: "/images/certifications/Scrum Toolbox Jira for Scrum.png",
+    skills: "Computer Science"
   },
   {
-    title: 'Secure Programmer: Software Testing',
-    company: 'Skillsoft',
-    date: 'Jun. 2023',
-    credentialId: '5023254',
-    imagePath: '/images/certifications/Secure Programmer Software Testing.png',
-    skills: 'Computer Science'
+    title: "Secure Programmer: Software Testing",
+    company: "Skillsoft",
+    date: "Jun. 2023",
+    credentialId: "5023254",
+    imagePath: "/images/certifications/Secure Programmer Software Testing.png",
+    skills: "Computer Science"
   },
   {
-    title: 'Working with Git',
-    company: 'Skillsoft',
-    date: 'Jun. 2023',
-    credentialId: '5102118',
-    imagePath: '/images/certifications/Working with Git.png',
-    skills: 'Computer Science'
+    title: "Working with Git",
+    company: "Skillsoft",
+    date: "Jun. 2023",
+    credentialId: "5102118",
+    imagePath: "/images/certifications/Working with Git.png",
+    skills: "Computer Science"
   },
   {
-    title: 'The Language of DevOps: DevOps Tools & Processes',
-    company: 'Skillsoft',
-    date: 'May. 2023',
-    credentialId: '4804472',
-    imagePath: '/images/certifications/The Language of DevOps DevOps Tools & Processes.png',
-    skills: 'Computer Science'
+    title: "The Language of DevOps: DevOps Tools & Processes",
+    company: "Skillsoft",
+    date: "May. 2023",
+    credentialId: "4804472",
+    imagePath: "/images/certifications/The Language of DevOps DevOps Tools & Processes.png",
+    skills: "Computer Science"
   },
   {
-    title: 'Python without Borders: HTML, CSS, Flask and MySQL',
-    company: 'Hola Mundo',
-    date: 'Nov. 2021',
-    credentialId: 'UC-05293651-db5c-42f6-ad31-a2172db20bad',
-    imagePath: '/images/certifications/Python sin fronteras HTML, CSS, Flask y MySQL.jpg',
-    skills: 'HTML5 · Front-end Coding · Computer Science · Git · Design Patterns'
+    title: "Python without Borders: HTML, CSS, Flask and MySQL",
+    company: "Hola Mundo",
+    date: "Nov. 2021",
+    credentialId: "UC-05293651-db5c-42f6-ad31-a2172db20bad",
+    imagePath: "/images/certifications/Python sin fronteras HTML, CSS, Flask y MySQL.jpg",
+    skills: "HTML5 · Front-end Coding · Computer Science · Git · Design Patterns"
   },
 ];
 
@@ -183,7 +183,7 @@ const AboutPage = () => {
       <h1>About Me</h1>
       <SectionTitle>Brief Introduction</SectionTitle>
       <p>
-        Hi, my name is Luis Ureña. I'm a sel-taugh programmer because since I was a little kid I wanted to learn how computers work, so programming was my gol when I became an adult.<br></br><br></br>I'm a hardworking and dedicated person; capable of meeting or exceeding job expectations. Quick learner and eager to continue learning. Self-disciplined. Able to work efficiently with small or large groups of people.
+        Hi, my name is Luis Ureña. I'm a sel-taugh programmer because since I was a little kid I wanted to learn how computers work, so programming was my gol when I became an adult.<br/><br/>I'm a hardworking and dedicated person; capable of meeting or exceeding job expectations. Quick learner and eager to continue learning. Self-disciplined. Able to work efficiently with small or large groups of people.
       </p>
       <SectionTitle>Professional Experience</SectionTitle>
       <p>

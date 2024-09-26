@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const CertificationContainer = styled.div`
   margin-bottom: 20px;
@@ -16,105 +16,84 @@ const CertificationContainer = styled.div`
   margin: 7px;
   position: relative;
   height: 250px;
-`
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  
+  &:hover {
+    transform: scale(1.05); /* Pequeño zoom al hacer hover */
+  }
+`;
 
 const Title = styled.h4`
   margin-top: 0px;
   margin-bottom: 5px;
   text-align: center;
-`
+`;
 
 const Company = styled.p`
   margin-bottom: 5px;
-`
+`;
 
 const Date = styled.p`
   margin-bottom: 5px;
-`
+`;
 
 const CredentialId = styled.p`
   text-align: center;
   margin-bottom: 5px;
-`
-
-const ImageButton = styled.button`
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 8px;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`
-
-const ImageOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 999;
-  display: ${props => (props.show ? 'block' : 'none')};
-`
+`;
 
 const ImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  max-height: 90%;
-`
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #fff;
-  border: none;
-  padding: 5px;
-  border-radius: 50%;
-  cursor: pointer;
-`
+  top: 0;
+  left: 0;
+  display: ${props => (props.show ? 'flex' : 'none')};
+  align-items: center;
+  justify-content: center;
+  background-color: #f6d0aa;
+  border-radius: 8px;
+  animation: ${props => (props.show ? fadeIn : 'none')} 0.3s ease-in-out;
+`;
 
 const Image = styled.img`
-  max-width: 700px;
-  height: auto;
-`
+  max-width: 90%;
+  max-height: 90%;
+`;
+
+const fadeIn = keyframes`
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+`;
 
 const Certification = ({ title, company, date, credentialId, imagePath }) => {
   const [showImage, setShowImage] = useState(false);
 
-  const handleImageClick = () => {
+  const handleMouseEnter = () => {
     setShowImage(true);
-  }
+  };
 
-  const handleCloseImage = () => {
+  const handleMouseLeave = () => {
     setShowImage(false);
-  }
+  };
 
   return (
-    <CertificationContainer>
-      <Title>{title}</Title>
-      <Company>Company: {company}</Company>
-      <Date>Issued Date: {date}</Date>
-      <CredentialId>Credential ID: {credentialId}</CredentialId>
-      <ImageButton onClick={handleImageClick}>Show Credential Image</ImageButton>
-      {showImage && (
-        <ImageOverlay show={showImage}>
-          <ImageContainer>
-            <CloseButton onClick={handleCloseImage}>X</CloseButton>
-            <Image src={imagePath} alt="Credential Image" />
-          </ImageContainer>
-        </ImageOverlay>
+    <CertificationContainer onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      {!showImage && (
+        <>
+          <Title>{title}</Title>
+          <Company>Company: {company}</Company>
+          <Date>Issued Date: {date}</Date>
+          <CredentialId>Credential ID: {credentialId}</CredentialId>
+        </>
       )}
+      <ImageContainer show={showImage}>
+        <Image src={imagePath} alt="Credential Image" />
+      </ImageContainer>
     </CertificationContainer>
-  )
-}
+  );
+};
 
 export default Certification;
