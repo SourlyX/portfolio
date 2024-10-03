@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Estilos para el footer
 const FooterContainer = styled.footer`
   width: 100%;
-  background-color: #333;
+  background-color: #2A2A2A;
   padding: 20px;
   margin-top: 50px;
   text-align: center;
+  color: #fff;
+  border-top: 2px solid #55F5ED;
 `
 
 const Column = styled.div`
@@ -18,8 +19,12 @@ const Column = styled.div`
 const SocialMediaLink = styled.a`
   display: inline-block;
   margin: 0 10px;
-  color: #fff;
+  color: #55F5ED;
   text-decoration: none;
+  
+  &:hover {
+    color: #E61C4D;
+  }
 `
 
 const SocialMediaLinks = styled.div`
@@ -34,6 +39,11 @@ const LogoImage = styled.img`
   height: 30px;
   margin-right: 10px;
   cursor: pointer;
+  transition: transform 0.3s;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
 `
 
 const Footer = () => {

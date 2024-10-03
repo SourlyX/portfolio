@@ -87,7 +87,7 @@ function App() {
       title: "MongoDB",
       description: "I turn to MongoDB when I need a NoSQL solution for projects that require flexibility in data storage. I use it to manage large datasets and unstructured data, ensuring my applications can handle real-time, fast, and scalable operations."
     }
-  ];
+  ]
   
 
   const softSkills = [

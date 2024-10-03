@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import Certification from "./Certification";
+import React from "react"
+import styled from "styled-components"
+import Certification from "./Certification"
 
 const certificationsData = [
   {
@@ -155,13 +155,13 @@ const certificationsData = [
     imagePath: "/images/certifications/Python sin fronteras HTML, CSS, Flask y MySQL.jpg",
     skills: "HTML5 · Front-end Coding · Computer Science · Git · Design Patterns"
   },
-];
+]
 
 const AboutPageContainer = styled.div`
   padding: 20px;
   height: auto;
   color: #E0E0E0;
-`;
+`
 
 const Cert = styled.div`
   background-color: #3B3F46;
@@ -170,7 +170,7 @@ const Cert = styled.div`
   justify-content: space-between;
   border-radius: 8px;
   padding: 10px;
-`;
+`
 
 const SectionTitle = styled.h2`
   font-size: 28px;
@@ -178,7 +178,7 @@ const SectionTitle = styled.h2`
   border-bottom: 2px solid #55F5ED;
   padding-bottom: 5px;
   color: #55F5ED;
-`;
+`
 
 
 const AboutPage = () => {
@@ -227,7 +227,7 @@ const AboutPage = () => {
         I'm fluent in both English and Spanish, both spoken and written, with strong communication skills in both languages.
       </p>
     </AboutPageContainer>
-  );
-};
+  )
+}
 
-export default AboutPage;
+export default AboutPage

@@ -7,14 +7,19 @@ const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #3B3F46;
   width: 90%;
+  padding: 20px;
+  background-color: #1F1F1F;
+  border-radius: 8px;
 `
 
 const Title = styled.h1`
   justify-self: center;
   width: 100%;
   text-align: center;
+  color: #55F5ED;
+  margin-bottom: 20px;
 `
 
 function Container({ cards, title }) {

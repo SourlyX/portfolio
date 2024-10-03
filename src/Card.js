@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 const Card = styled.div`
   width: 27%;
-  color: #464A6D;
+  color: #E0E0E0;
   flex-grow: 1;
-  background-color: #f6d0aa;
+  background-color: #2C3E50;
   border-radius: 8px;
   padding: 16px;
   margin: 16px;
@@ -15,6 +15,10 @@ const Card = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  
+  &:hover {
+    background-color: #34495E;
+  }
 `
 
 const CardImage = styled.img`
@@ -27,6 +31,7 @@ const CardImage = styled.img`
 const CardTitle = styled.h3`
   margin: 0;
   padding-bottom: 10px;
+  color: #55F5ED;
 `
 
 const CardDescription = styled.div`
@@ -36,6 +41,7 @@ const CardDescription = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
+  color: #E0E0E0;
 `
 
 function Cards({ cards }) {
@@ -50,11 +56,11 @@ function Cards({ cards }) {
             </CardDescription>
             <CardImage src={card.image} alt="Card" />
           </Card>
-        );
+        )
       })}
     </>
-  );
+  )
 }
 
 
-export default Cards;
+export default Cards
