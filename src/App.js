@@ -9,12 +9,13 @@ import { Helmet } from "react-helmet"
 import { Routes, Route } from "react-router-dom"
 
 const MainApp = styled.div`
-  color: white;
-  background-color: #121212;
+  color: #E0E0E0;
+  background-color: #282C34;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center
+  justify-content: center;
 `
+
 
 function App() {
   const cards = [

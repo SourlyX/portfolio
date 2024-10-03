@@ -160,22 +160,26 @@ const certificationsData = [
 const AboutPageContainer = styled.div`
   padding: 20px;
   height: auto;
-  color: #fff;
+  color: #E0E0E0;
 `;
 
 const Cert = styled.div`
-  background-color: #525248;
+  background-color: #3B3F46;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border-radius: 8px;
+  padding: 10px;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 28px;
   margin-bottom: 15px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #55F5ED;
   padding-bottom: 5px;
+  color: #55F5ED;
 `;
+
 
 const AboutPage = () => {
   return (

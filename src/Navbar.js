@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-  background-color: none;
-  color: #D34846;
+  background-color: 282C34;
+  color: #55F5ED;
   width: 100%;
-  border: 1px solid;
+  border: 1px solid #55F5ED;
   border-radius: 50px;
   height: 1.5rem;
   font-size: 1rem;
@@ -36,7 +36,7 @@ const ListItem = styled.li`
   
   &:hover a{
     transform: translatey(15px);
-    color: #E61C4D;
+    color: #6BFFA6;
   }
 
   &:before{
@@ -48,12 +48,16 @@ const ListItem = styled.li`
 `
 
 const Link = styled.a`
-  color: #E61C4D;
+  color: #55F5ED;
   text-decoration: none;
   padding: 10px;
   margin: -10px;
-  background-color: #F6D0AA;
+  background-color: #3B3F46;
   border-radius: 50%;
+  
+  &:hover {
+    background-color: #FF6B6B; /* Fondo coral en hover */
+  }
 `
 
 function Navbar({ items }){
