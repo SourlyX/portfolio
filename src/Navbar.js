@@ -3,7 +3,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Nav = styled.nav`
-  background-color: 282C34;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  background-color: #282C34;
   color: #55F5ED;
   width: 100%;
   border: 1px solid #55F5ED;

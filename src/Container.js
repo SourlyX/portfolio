@@ -20,6 +20,7 @@ const Title = styled.h1`
   text-align: center;
   color: #55F5ED;
   margin-bottom: 20px;
+  margin-top:50px;
 `
 
 function Container({ cards, title }) {
