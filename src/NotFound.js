@@ -11,6 +11,7 @@ const PageNotFoundContainer = styled.div`
   width: 100%;
   background-color: #1E1E1E;
   padding: 40px;
+  height: 100vh;
 `;
 
 const ErrorImage = styled.img`
