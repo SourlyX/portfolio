@@ -1,3 +1,4 @@
+import { useNavigate, useLocation } from 'react-router-dom'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -56,17 +57,27 @@ const Link = styled.a`
   border-radius: 50%;
   
   &:hover {
-    background-color: #FF6B6B; /* Fondo coral en hover */
+    background-color: #FF6B6B;
   }
 `
 
-function Navbar({ items }){
+function Navbar({ items, contactRef }){
+  const handleClick = (url) => {
+    if (url === "#contact") {
+      contactRef.current?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.location.href = url
+    }
+  }
+
   return (
     <Nav>
       <List>
         {items.map((item, index) => (
           <ListItem label={item.label} key={index}>
-            <Link href={item.url}>{item.label}</Link>
+            <Link as="button" onClick={() => handleClick(item.url)}>
+              {item.label}
+            </Link>
           </ListItem>
         ))}
       </List>

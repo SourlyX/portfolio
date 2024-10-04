@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useRef } from "react"
 import Navbar from "./Navbar"
 import Container from "./Container"
 import Footer from "./Footer"
 import styled from "styled-components"
-import About from "./About" // Importa el componente About
+import About from "./About"
+import Contact from "./Contact"
 import "./index.css"
 import { Helmet } from "react-helmet"
 import { Routes, Route } from "react-router-dom"
@@ -18,6 +19,8 @@ const MainApp = styled.div`
 
 
 function App() {
+  const contactRef = useRef(null)
+
   const cards = [
     {
       image: "https://example.com/image1.jpg",
@@ -207,7 +210,7 @@ function App() {
     { label: "Home", url: "/" },
     { label: "About", url: "/about" },
     { label: "Projects", url: "/projects" },
-    { label: "Contact", url: "/contact" }
+    { label: "Contact", url: "#contact" }
   ]
   
   return (
@@ -217,7 +220,7 @@ function App() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
       </Helmet>
-      <Navbar items={navbarItems}/>
+      <Navbar items={navbarItems} contactRef={contactRef} />
       <Routes>
         <Route path="/" element={
           <>
@@ -227,8 +230,10 @@ function App() {
           </>
         }/>
         <Route path="/about" element={<About />} />
-        <Route path="*" element="404: route not found"/>
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element="404: route not found" />
       </Routes>
+      <Contact id="contact" ref={contactRef} />
       <Footer />
     </MainApp>
   )

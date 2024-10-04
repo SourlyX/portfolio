@@ -49,8 +49,8 @@ const LogoImage = styled.img`
 const Footer = () => {
   const datos = {
     name: 'Luis Ureña Arosemena',
-    email: 'luisferua@gmail.com',
-    phone: '+506 6005 7935',
+    email: 'luisferuatrabajos@gmail.com',
+    phone: '+(506) 6005 7935',
     socialMedia: {
       linkedin: 'https://www.linkedin.com/in/luis-ure%C3%B1a-arosemena-501105211',
       github: 'https://github.com/SourlyX',

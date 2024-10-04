@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, forwardRef } from 'react';
 import styled from 'styled-components'
 
 const ContactContainer = styled.div`
@@ -80,7 +80,7 @@ const ContactDetail = styled.p`
 `
 
 
-const Contact = () => {
+const Contact = forwardRef((props, ref) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -100,7 +100,7 @@ const Contact = () => {
   }
 
   return (
-    <ContactContainer>
+    <ContactContainer ref={ref} id="contact">
       <Title>Contact</Title>
       <Form onSubmit={handleSubmit}>
         <Input 
@@ -135,6 +135,6 @@ const Contact = () => {
       </ContactInfo>
     </ContactContainer>
   )
-}
+})
 
 export default Contact
