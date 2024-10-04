@@ -6,6 +6,7 @@ import styled from "styled-components"
 import About from "./About"
 import Contact from "./Contact"
 import PageNotFound from "./NotFound"
+import LandingPage from "./Me"
 import "./index.css"
 import { Helmet } from "react-helmet"
 import { Routes, Route } from "react-router-dom"
@@ -20,6 +21,7 @@ const MainApp = styled.div`
 
 
 function App() {
+
   const contactRef = useRef(null)
 
   const cards = [
@@ -222,6 +224,7 @@ function App() {
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
       </Helmet>
       <Navbar items={navbarItems} contactRef={contactRef} />
+      <LandingPage/>
       <Routes>
         <Route path="/" element={
           <>
@@ -242,10 +245,8 @@ function App() {
 export default App
 
 {/*
-  Agregar nombre y habilidad principal
   Crear twitter de programador
   Agregar foto mia de yo
-  Agregar CV en pdf y poder descargar y abrir cv
   Proyectos (descripcion, imagen, tecnologias, codigo)
   Poner pocos proyectos en la pagina de home
   Habilidades (estoy aprendiendo)
