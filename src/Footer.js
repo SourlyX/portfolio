@@ -70,9 +70,9 @@ const Footer = () => {
       <Column>
         <h3>Social Media:</h3>
         <SocialMediaLinks>
-          <SocialMediaLink href={datos.socialMedia.linkedin}><LogoImage src="/images/linkedin.png" alt="Facebook" /></SocialMediaLink>
-          <SocialMediaLink href={datos.socialMedia.github}><LogoImage src="/images/github.png" alt="Facebook" /></SocialMediaLink>
-          <SocialMediaLink href={datos.socialMedia.facebook}><LogoImage src="/images/facebook.png" alt="Facebook" /></SocialMediaLink>
+          <SocialMediaLink href={datos.socialMedia.linkedin}><LogoImage src="/images/linkedin.png" alt="LinkedIn" /></SocialMediaLink>
+          <SocialMediaLink href={datos.socialMedia.github}><LogoImage src="/images/github.png" alt="Github" /></SocialMediaLink>
+          {/* <SocialMediaLink href={datos.socialMedia.facebook}><LogoImage src="/images/facebook.png" alt="Facebook" /></SocialMediaLink> */}
           <SocialMediaLink href={datos.socialMedia.twitter}><LogoImage src="/images/twitter.png" alt="Twitter" /></SocialMediaLink>
         </SocialMediaLinks>
       </Column>

@@ -5,6 +5,7 @@ import Footer from "./Footer"
 import styled from "styled-components"
 import About from "./About"
 import Contact from "./Contact"
+import PageNotFound from "./NotFound"
 import "./index.css"
 import { Helmet } from "react-helmet"
 import { Routes, Route } from "react-router-dom"
@@ -230,8 +231,7 @@ function App() {
           </>
         }/>
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element="404: route not found" />
+        <Route path="*"  element={<PageNotFound />} />
       </Routes>
       <Contact id="contact" ref={contactRef} />
       <Footer />
@@ -240,3 +240,16 @@ function App() {
 }
 
 export default App
+
+{/*
+  Agregar nombre y habilidad principal
+  Crear twitter de programador
+  Agregar foto mia de yo
+  Agregar CV en pdf y poder descargar y abrir cv
+  Proyectos (descripcion, imagen, tecnologias, codigo)
+  Poner pocos proyectos en la pagina de home
+  Habilidades (estoy aprendiendo)
+  Hobbies (recomendado)
+  Categorizar habilidades tecnicas
+  Agregar experiencia laboral (aunque no tenga)
+*/}
