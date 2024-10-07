@@ -12,7 +12,7 @@ const LandingPageContainer = styled.div`
   padding: 20px;
   color: #f5f5f5;
   width: 90%;
-  border-top: 2px solid #55F5ED;
+  border-bottom: 2px solid #55F5ED;
 `
 
 const ButtonContainer = styled.div`

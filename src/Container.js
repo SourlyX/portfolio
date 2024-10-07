@@ -12,6 +12,7 @@ const CardContainer = styled.div`
   padding: 20px;
   background-color: #1F1F1F;
   border-radius: 8px;
+  margin-bottom: 50px;
 `
 
 const Title = styled.h1`
@@ -20,7 +21,7 @@ const Title = styled.h1`
   text-align: center;
   color: #55F5ED;
   margin-bottom: 20px;
-  margin-top:50px;
+  margin-top: 50px;
 `
 
 function Container({ cards, title }) {
