@@ -109,8 +109,8 @@ const Contact = forwardRef((props, ref) => {
   }
 
   return (
-    <Container>
-    <ContactContainer ref={ref} id="contact">
+    <Container id="contact">
+    <ContactContainer ref={ref}>
       <Title>Contact</Title>
       <Form onSubmit={handleSubmit}>
         <Input 

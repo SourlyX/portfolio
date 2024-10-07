@@ -68,6 +68,9 @@ function Navbar({ items, contactRef }){
   const handleClick = (url) => {
     if (url === "#contact") {
       contactRef.current?.scrollIntoView({ behavior: 'smooth' })
+      setTimeout(() => {
+        window.scrollBy({ top: -100 });
+      }, 700)
     } else {
       window.location.href = url
     }
