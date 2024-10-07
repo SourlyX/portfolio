@@ -75,7 +75,7 @@ function App() {
     },
     {
       image: "images/skills/ASP.png",
-      title: "ASP.Net",
+      title: "ASP.Net (learning)",
       description: "For back-end development, I use ASP.NET to create scalable web applications. Whether it’s building RESTful services or dynamic server-side rendering, ASP.NET allows me to handle the heavy lifting behind the scenes with its robust framework."
     },
     {
@@ -224,10 +224,10 @@ function App() {
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
       </Helmet>
       <Navbar items={navbarItems} contactRef={contactRef} />
-      <LandingPage/>
       <Routes>
         <Route path="/" element={
           <>
+            <LandingPage/>
             {cards && cards.length > 0 && <Container cards={cards} title="Titulo 1" />}
             {frontendCards && frontendCards.length > 0 && <Container cards={frontendCards} title="Technical Skills" />}
             {softSkills && softSkills.length > 0 && <Container cards={softSkills} title="Soft Skills" />}
@@ -246,11 +246,8 @@ export default App
 
 {/*
   Crear twitter de programador
-  Agregar foto mia de yo
-  Proyectos (descripcion, imagen, tecnologias, codigo)
+  Proyectos (descripcion, imagen, tecnologias, código)
   Poner pocos proyectos en la pagina de home
-  Habilidades (estoy aprendiendo)
   Hobbies (recomendado)
-  Categorizar habilidades tecnicas
-  Agregar experiencia laboral (aunque no tenga)
+  Categorizar habilidades tecnicas (front/back/...)
 */}

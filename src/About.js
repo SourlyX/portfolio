@@ -157,6 +157,19 @@ const certificationsData = [
   },
 ]
 
+const StyledLink = styled.a`
+  color: #007bff;
+  text-decoration: underline;
+  font-size: 1rem;
+  font-weight: normal;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #0056b3;
+  }
+`
+
 const AboutPageContainer = styled.div`
   padding: 20px;
   height: auto;
@@ -191,7 +204,7 @@ const AboutPage = () => {
       </p>
       <SectionTitle>Professional Experience</SectionTitle>
       <p>
-        I worked from December 2021 until March 2023 as a QA analyst at Konrad Group, and since early 2021, I have been working on self-taught projects, which can be seen <a href="/projects">here</a> or by visiting "Projects" in the top menu.
+        I worked from December 2021 until March 2023 as a QA analyst at Konrad Group.<br/><br/> I have been working on self-taught projects, which can be seen <StyledLink href="/projects">here</StyledLink> or by visiting "Projects" in the top menu.
       </p>
       <SectionTitle>Education</SectionTitle>
       <p>

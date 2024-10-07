@@ -8,6 +8,7 @@ const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-top: 2px solid #55F5ED;
 `
 
 const Title = styled.h2`
@@ -130,7 +131,7 @@ const Contact = forwardRef((props, ref) => {
         <SubmitButton type="submit">Send</SubmitButton>
       </Form>
       <ContactInfo>
-        <ContactDetail>Email: luisferuatrabajos@gmail.com.com</ContactDetail>
+        <ContactDetail>Email: luisferuatrabajos@gmail.com</ContactDetail>
         <ContactDetail>Teléfono: +(506) 6005 7935</ContactDetail>
       </ContactInfo>
     </ContactContainer>

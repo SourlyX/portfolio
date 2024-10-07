@@ -12,6 +12,7 @@ const LandingPageContainer = styled.div`
   padding: 20px;
   color: #f5f5f5;
   width: 90%;
+  border-top: 2px solid #55F5ED;
 `
 
 const ButtonContainer = styled.div`
@@ -23,7 +24,7 @@ const ButtonContainer = styled.div`
 
 const ProfileImage = styled.img`
   width: 200px;
-  height: 200px;
+  height: auto;
   border-radius: 50%;
   margin-bottom: 20px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
