@@ -193,23 +193,37 @@ const SectionTitle = styled.h2`
   color: #55F5ED;
 `
 
+const SectionText = styled.p`
+  margin-top: 16px;
+  margin-bottom: 5rem;
+  line-height: 1.6;
+  color: white;
+  font-size: 1rem;
+  text-align: justify;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    margin-top: 12px;
+  }
+`
+
+
 
 const AboutPage = () => {
   return (
     <AboutPageContainer>
       <h1>About Me</h1>
       <SectionTitle>Brief Introduction</SectionTitle>
-      <p>
+      <SectionText>
         Hi, my name is Luis Ureña. I'm a sel-taugh programmer because since I was a little kid I wanted to learn how computers work, so programming was my gol when I became an adult.<br/><br/>I'm a hardworking and dedicated person; capable of meeting or exceeding job expectations. Quick learner and eager to continue learning. Self-disciplined. Able to work efficiently with small or large groups of people.
-      </p>
+      </SectionText>
       <SectionTitle>Professional Experience</SectionTitle>
-      <p>
+      <SectionText>
         I worked from December 2021 until March 2023 as a QA analyst at Konrad Group.<br/><br/> I have been working on self-taught projects, which can be seen <StyledLink href="/projects">here</StyledLink> or by visiting "Projects" in the top menu.
-      </p>
+      </SectionText>
       <SectionTitle>Education</SectionTitle>
-      <p>
+      <SectionText>
         Bachelor's degree in high school education at "Liceo de Curridabat"
-      </p>
+      </SectionText>
       <SectionTitle>Certifications</SectionTitle>
       <Cert>
       {certificationsData.map((certification, index) => (
@@ -224,21 +238,21 @@ const AboutPage = () => {
         />
       ))}</Cert>
       <SectionTitle>Skills</SectionTitle>
-      <p>
+      <SectionText>
         I'm proficient in JavaScript, Java, Node.js, C, C++, Assembly, AngularJS, SQL, and C#. However, the ones I master the most are React, HTML, CSS, MongoDB, and Python with the Flask framework.
-      </p>
+      </SectionText>
       <SectionTitle>Interests</SectionTitle>
-      <p>
+      <SectionText>
         I enjoy reading novels, especially science fiction or fantasy, playing video games, and programming as a hobby.
-      </p>
+      </SectionText>
       <SectionTitle>Professional Goals</SectionTitle>
-      <p>
+      <SectionText>
         My short-term goals are to work for a programming company and build knowledge with my colleagues. My long-term goals are to become a senior developer to be able to help other people with their programming problems.
-      </p>
+      </SectionText>
       <SectionTitle>Languages</SectionTitle>
-      <p>
+      <SectionText>
         I'm fluent in both English and Spanish, both spoken and written, with strong communication skills in both languages.
-      </p>
+      </SectionText>
     </AboutPageContainer>
   )
 }

@@ -1,6 +1,14 @@
 import React, { useState, forwardRef } from 'react';
 import styled from 'styled-components'
 
+const Container = styled.div`
+  width: 98%;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  border-top: 2px solid #55F5ED;
+`
+
 const ContactContainer = styled.div`
   background-color: #1E1E1E;
   margin-top: 50px;
@@ -8,7 +16,8 @@ const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 2px solid #55F5ED;
+  width: 30%;
+  max-width: 350px;
 `
 
 const Title = styled.h2`
@@ -48,7 +57,6 @@ const Textarea = styled.textarea`
   border-radius: 4px;
   font-size: 16px;
   resize: none;
-  background-color: #f9f9f9;
   
   &:focus {
     border-color: #55F5ED;
@@ -101,6 +109,7 @@ const Contact = forwardRef((props, ref) => {
   }
 
   return (
+    <Container>
     <ContactContainer ref={ref} id="contact">
       <Title>Contact</Title>
       <Form onSubmit={handleSubmit}>
@@ -135,6 +144,7 @@ const Contact = forwardRef((props, ref) => {
         <ContactDetail>Teléfono: +(506) 6005 7935</ContactDetail>
       </ContactInfo>
     </ContactContainer>
+    </Container>
   )
 })
 
