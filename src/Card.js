@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import DownloadButton from './DownloadButton'
 
 const Card = styled.div`
   width: 27%;
@@ -15,7 +16,7 @@ const Card = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
+
   &:hover {
     background-color: #34495E;
   }
@@ -47,20 +48,18 @@ const CardDescription = styled.div`
 function Cards({ cards }) {
   return (
     <>
-      {cards.map((card, index) => {
-        return (
-          <Card key={index}>
-            <CardDescription>
-              <CardTitle>{card.title}</CardTitle>
-              <p>{card.description}</p>
-            </CardDescription>
-            <CardImage src={card.image} alt="Card" />
-          </Card>
-        )
-      })}
+      {cards.map((card, index) => (
+        <Card key={index}>
+          <CardDescription>
+            <CardTitle>{card.title}</CardTitle>
+            <p>{card.description}</p>
+            {card.url && <DownloadButton url={card.url} />}
+          </CardDescription>
+          <CardImage src={card.image} alt="Card" />
+        </Card>
+      ))}
     </>
   )
 }
 
-
-export default Cards
+export default Cards;

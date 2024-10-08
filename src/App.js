@@ -7,7 +7,6 @@ import About from "./About"
 import Contact from "./Contact"
 import PageNotFound from "./NotFound"
 import LandingPage from "./Me"
-import Proyects from "./Proyects"
 import "./index.css"
 import { Helmet } from "react-helmet"
 import { Routes, Route } from "react-router-dom"
@@ -210,31 +209,36 @@ function App() {
     }
   ]
 
-  myProyects = [
+  const myProyects = [
     {
       image: "images/softSkills/restarurant.jpeg",
       title: "Server Restaurant",
-      description: ""
+      description: "",
+      url: "restaurante"
     },
     {
       image: "images/softSkills/todo.jpeg",
       title: "To-do list",
-      description: ""
+      description: "",
+      url: "to-do-list"
     },
     {
       image: "images/softSkills/algo.jpeg",
       title: "",
-      description: ""
+      description: "",
+      url: "restaurante"
     },
     {
       image: "images/softSkills/algo2.jpeg",
       title: "",
-      description: ""
+      description: "",
+      url: "restaurante"
     },
     {
       image: "images/softSkills/algo3.jpeg",
       title: "",
-      description: ""
+      description: "",
+      url: "restaurante"
     },
   ]
 
@@ -263,7 +267,7 @@ function App() {
         }/>
         <Route path="/about" element={<About />} />
         <Route path="*"  element={<PageNotFound />} />
-        <Route path="/proyects/*" element={<Proyects cards={frontendCards} title="Technical Skills"/>} />
+        <Route path="/projects/*" element={<Container cards={myProyects} title="Projects"/>} />
       </Routes>
       <Contact id="contact" ref={contactRef} />
       <Footer />
