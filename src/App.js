@@ -7,6 +7,7 @@ import About from "./About"
 import Contact from "./Contact"
 import PageNotFound from "./NotFound"
 import LandingPage from "./Me"
+import Proyects from "./Proyects"
 import "./index.css"
 import { Helmet } from "react-helmet"
 import { Routes, Route } from "react-router-dom"
@@ -209,6 +210,34 @@ function App() {
     }
   ]
 
+  myProyects = [
+    {
+      image: "images/softSkills/restarurant.jpeg",
+      title: "Server Restaurant",
+      description: ""
+    },
+    {
+      image: "images/softSkills/todo.jpeg",
+      title: "To-do list",
+      description: ""
+    },
+    {
+      image: "images/softSkills/algo.jpeg",
+      title: "",
+      description: ""
+    },
+    {
+      image: "images/softSkills/algo2.jpeg",
+      title: "",
+      description: ""
+    },
+    {
+      image: "images/softSkills/algo3.jpeg",
+      title: "",
+      description: ""
+    },
+  ]
+
   const navbarItems = [
     { label: "Home", url: "/" },
     { label: "About", url: "/about" },
@@ -228,13 +257,13 @@ function App() {
         <Route path="/" element={
           <>
             <LandingPage/>
-            {cards && cards.length > 0 && <Container cards={cards} title="Titulo 1" />}
             {frontendCards && frontendCards.length > 0 && <Container cards={frontendCards} title="Technical Skills" />}
             {softSkills && softSkills.length > 0 && <Container cards={softSkills} title="Soft Skills" />}
           </>
         }/>
         <Route path="/about" element={<About />} />
         <Route path="*"  element={<PageNotFound />} />
+        <Route path="/proyects/*" element={<Proyects cards={frontendCards} title="Technical Skills"/>} />
       </Routes>
       <Contact id="contact" ref={contactRef} />
       <Footer />
