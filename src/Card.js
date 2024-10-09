@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import DownloadButton from './DownloadButton'
+import Button from './Button'
 
 const Card = styled.div`
   width: 27%;
@@ -53,7 +53,7 @@ function Cards({ cards }) {
           <CardDescription>
             <CardTitle>{card.title}</CardTitle>
             <p>{card.description}</p>
-            {card.url && <DownloadButton url={card.url} />}
+            {card.url && <Button url={card.url} />}
           </CardDescription>
           <CardImage src={card.image} alt="Card" />
         </Card>
