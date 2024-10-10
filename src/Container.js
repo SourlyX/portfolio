@@ -24,11 +24,11 @@ const Title = styled.h1`
   margin-top: 50px;
 `
 
-function Container({ cards, title }) {
+function Container({ cards, title, text }) {
   return (
     <>
       <Title>{title}</Title>
-      <CardContainer><Cards cards={cards}/></CardContainer>
+      <CardContainer><Cards cards={cards} text={text}/></CardContainer>
     </>
   )
 }

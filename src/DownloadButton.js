@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 
-const Button = styled.button`
+const GenericButtonButton = styled.button`
   background-color: #55F5ED;
   color: #2C3E50;
   border: none;
@@ -16,27 +16,27 @@ const Button = styled.button`
   }
 `
 
-const DownloadButton = ({ url, filePath, text }) => {
+const Button = ({ url, filePath, text }) => {
   const navigate = useNavigate()
 
   const handleClick = () => {
     if (url) {
-      navigate(url); // Navegar a la URL proporcionada
+      navigate(url)
     } else if (filePath) {
-      const link = document.createElement('a');
-      link.href = filePath;
-      link.setAttribute('download', ''); // Iniciar descarga
-      document.body.appendChild(link);
+      const link = document.createElement('a')
+      link.href = filePath
+      link.setAttribute('download', '')
+      document.body.appendChild(link)
       link.click()
       link.remove()
     }
   };
 
   return (
-    <Button onClick={handleClick}>
+    <GenericButtonButton onClick={handleClick}>
       {text}
-    </Button>
+    </GenericButtonButton>
   );
 };
 
-export default DownloadButton;
+export default Button;

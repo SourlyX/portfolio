@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState }from "react"
 import Navbar from "./Navbar"
 import Container from "./Container"
 import Footer from "./Footer"
@@ -7,6 +7,8 @@ import About from "./About"
 import Contact from "./Contact"
 import PageNotFound from "./NotFound"
 import LandingPage from "./Me"
+import ToDoList from "./Todo/ToDoList"
+import Restarurante from "./Restaurante/Restaurante"
 import "./index.css"
 import { Helmet } from "react-helmet"
 import { Routes, Route } from "react-router-dom"
@@ -248,6 +250,13 @@ function App() {
     { label: "Projects", url: "/projects" },
     { label: "Contact", url: "#contact" }
   ]
+
+  const [todos, setTodos] = useState([
+    {name: "Something", active: true},
+    {name: "Something 2", active: true},
+    {name: "Supercalifragilisticexpialidocious", active: false},
+    {name: "Even though the sound of it is something quite atrocious", active: false},
+  ])
   
   return (
     <MainApp>
@@ -267,7 +276,9 @@ function App() {
         }/>
         <Route path="/about" element={<About />} />
         <Route path="*"  element={<PageNotFound />} />
-        <Route path="/projects/*" element={<Container cards={myProyects} title="Projects"/>} />
+        <Route path="/projects/*" element={<Container cards={myProyects}  text={"Go to project"} title="Projects"/>} />
+        <Route path="/projects/to-do-list" element={<ToDoList todos={todos} setTodos={setTodos}/>}/>
+        <Route path="/projects/restaurante" element={<Restarurante/>}/>
       </Routes>
       <Contact id="contact" ref={contactRef} />
       <Footer />

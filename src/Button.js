@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 
-const genericButton = styled.button`
+const GenericButton = styled.button`
   background-color: #55F5ED;
   color: #2C3E50;
   border: none;
@@ -33,9 +33,9 @@ const Button = ({ url, filePath, text }) => {
   };
 
   return (
-    <Button onClick={handleClick}>
+    <GenericButton onClick={handleClick}>
       {text}
-    </Button>
+    </GenericButton>
   );
 };
 

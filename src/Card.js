@@ -45,7 +45,7 @@ const CardDescription = styled.div`
   color: #E0E0E0;
 `
 
-function Cards({ cards }) {
+function Cards({ cards, text }) {
   return (
     <>
       {cards.map((card, index) => (
@@ -53,7 +53,7 @@ function Cards({ cards }) {
           <CardDescription>
             <CardTitle>{card.title}</CardTitle>
             <p>{card.description}</p>
-            {card.url && <Button url={card.url} />}
+            {card.url && <Button url={card.url} text={text}/>}
           </CardDescription>
           <CardImage src={card.image} alt="Card" />
         </Card>
