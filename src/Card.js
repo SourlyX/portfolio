@@ -55,7 +55,7 @@ function Cards({ cards, text }) {
             <p>{card.description}</p>
             {card.url && <Button url={card.url} text={text}/>}
           </CardDescription>
-          <CardImage src={card.image} alt="Card" />
+          <CardImage src={card.image} alt="Project" />
         </Card>
       ))}
     </>

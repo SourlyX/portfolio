@@ -177,7 +177,7 @@ class Restarurante extends Component {
   render(){
     const {esCarroVisible} = this.state //variable que dice si el carrito de compras se ve o no se ve
     return(
-      <div>
+      <div style={{ backgroundColor: "white"}} width="100%">
         {/* La barra de navegación en la parte más arriba de la pantalla */}
         <Navbar
           carro={this.state.carro}

@@ -101,11 +101,27 @@ const Contact = forwardRef((props, ref) => {
     setFormData({ ...formData, [name]: value })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(formData)
-    alert('Mensaje enviado!')
-    setFormData({ name: '', email: '', message: '' })
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        alert('Mensaje enviado!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert('Hubo un error al enviar el mensaje.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Hubo un error al enviar el mensaje.');
+    }
   }
 
   return (

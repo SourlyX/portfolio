@@ -28,9 +28,14 @@ function Container({ cards, title, text }) {
   return (
     <>
       <Title>{title}</Title>
-      <CardContainer><Cards cards={cards} text={text}/></CardContainer>
+      <CardContainer>
+        <Cards
+          cards={cards}
+          text={text}
+          style={{ width: cards.url ? '50%' : 'auto' }}/>
+        </CardContainer>
     </>
   )
 }
 
-export default Container;
+export default Container

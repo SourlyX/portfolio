@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Button from '../Button'
 
 const Container = styled.div`
   background-color: #1E1E1E;
@@ -8,17 +7,18 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 50%;
-  height: max(100px, auto);
   padding: 30px;
   margin-top: 50px;
   margin-bottom: 50px;
 `
+
 const Todo = styled.div`
   display: flex;
   flex-direction: row;
-  wrap: no-wrap;
+  flex-wrap: nowrap;
   width: 100%;
-  border: 1px solid gray;
+  border: 1px solid #3A3A3A;
+  border-radius: 4px;
 `
 
 const Title = styled.h2`
@@ -27,17 +27,19 @@ const Title = styled.h2`
 `
 
 const Text = styled.p`
-  font-size:20px;
+  font-size: 20px;
   width: 90%;
-  padding: 0 5px 0 5px;
+  padding: 0 5px;
   text-align: center;
   text-decoration: ${({ active }) => (!active ? 'line-through' : 'none')};
+  color: #f5f5f5;
 `
 
 const NewTodo = styled.div`
   margin-top: 30px;
+  display: flex;
   flex-direction: row;
-  wrap: no-wrap;
+  flex-wrap: nowrap;
 `
 
 const AddNew = styled.button`
@@ -54,28 +56,44 @@ const AddNew = styled.button`
   }
 `
 
+const Bin = styled.img`
+  height: 55px;
+  width: auto;
+  cursor: pointer;
+  margin: 3px 10px;
+
+  &:hover {
+    scale: 1.05;
+  }
+`
+
 const ToDoList = ({ todos, setTodos }) => {
-  const [newTodo, setNewTodo] = useState("");
+  const [newTodo, setNewTodo] = useState("")
 
   const handleClick = (index) => {
     setTodos((prevState) => 
       prevState.map((todo, i) => 
         i === index ? { ...todo, active: !todo.active } : todo
       )
-    );
-  };
+    )
+  }
 
   const addTodo = () => {
-    if (newTodo.trim() === "") return;
+    if (newTodo.trim() === "") return
 
     const newTask = {
       name: newTodo,
       active: true,
-    };
+    }
 
-    setTodos([...todos, newTask]);
-    setNewTodo("");
-  };
+    setTodos([...todos, newTask])
+    setNewTodo("")
+  }
+  
+  const removeTodo = (index) => {
+    const updatedTodos = todos.filter((_, todoIndex) => todoIndex !== index)
+    setTodos(updatedTodos)
+  }
 
   return (
     <>
@@ -90,6 +108,10 @@ const ToDoList = ({ todos, setTodos }) => {
               style={{ cursor: "pointer", margin: "0 10px 0 10px" }}
             />
             <Text active={todo.active}>{todo.name}</Text>
+            <Bin
+              src="/images/restaurante/garbage.png"
+              alt="Garbage Icon"
+              onClick={() => removeTodo(index)}/>
           </Todo>
         ))}
         <NewTodo>
@@ -104,7 +126,7 @@ const ToDoList = ({ todos, setTodos }) => {
         </NewTodo>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default ToDoList;
+export default ToDoList

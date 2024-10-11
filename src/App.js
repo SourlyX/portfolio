@@ -213,31 +213,31 @@ function App() {
 
   const myProyects = [
     {
-      image: "images/softSkills/restarurant.jpeg",
-      title: "Server Restaurant",
+      image: "images/projects/restarurant.jpeg",
+      title: "Restaurant",
       description: "",
       url: "restaurante"
     },
     {
-      image: "images/softSkills/todo.jpeg",
+      image: "images/projects/todo.png",
       title: "To-do list",
       description: "",
       url: "to-do-list"
     },
     {
-      image: "images/softSkills/algo.jpeg",
+      image: "images/projects/algo.jpeg",
       title: "",
       description: "",
       url: "restaurante"
     },
     {
-      image: "images/softSkills/algo2.jpeg",
+      image: "images/projects/algo2.jpeg",
       title: "",
       description: "",
       url: "restaurante"
     },
     {
-      image: "images/softSkills/algo3.jpeg",
+      image: "images/projects/algo3.jpeg",
       title: "",
       description: "",
       url: "restaurante"
@@ -256,6 +256,12 @@ function App() {
     {name: "Something 2", active: true},
     {name: "Supercalifragilisticexpialidocious", active: false},
     {name: "Even though the sound of it is something quite atrocious", active: false},
+    {name: "buy hotcakes", active: true},
+    {name: "Go to the supermarket", active: true},
+    {name: "Buy more hotcakes", active: true},
+    {name: "Fly like superman", active: true},
+    {name: "Buy some eggos", active: true},
+    {name: "Uyy muchachos, ustedeh ehcucharon el rempalago?", active: true},
   ])
   
   return (
