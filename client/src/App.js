@@ -215,33 +215,21 @@ function App() {
     {
       image: "images/projects/restarurant.jpeg",
       title: "Restaurant",
-      description: "",
+      description: "This project is a restaurant management app built with React, designed to assist waiters in taking customer orders efficiently. \
+      The app allows staff to add orders directly to the order list, streamlining the ordering process. It is connected to a Node.js backend, ensuring \
+      real-time updates between the front and back end (In menu items, for example). However, some functionalities, like saving completed orders, are \
+      still under development. This project highlights my skills in building responsive front-end applications with backend integration to improve day-to-day operations.",
       url: "restaurante"
     },
     {
       image: "images/projects/todo.png",
       title: "To-do list",
-      description: "",
+      description: "This project is a simple and functional To-Do List built with React. It allows users to create, edit, and delete tasks, offering \
+      a clean and intuitive interface for managing daily activities. The application stores tasks locally for now, ensuring usability even without backend \
+      integration. However, a connected version with a Node.js backend is currently under development to enable persistent storage and synchronization \
+      across devices. This project reflects my focus on dynamic front-end design and will soon evolve with full-stack functionality.",
       url: "to-do-list"
-    },
-    {
-      image: "images/projects/algo.jpeg",
-      title: "",
-      description: "",
-      url: "restaurante"
-    },
-    {
-      image: "images/projects/algo2.jpeg",
-      title: "",
-      description: "",
-      url: "restaurante"
-    },
-    {
-      image: "images/projects/algo3.jpeg",
-      title: "",
-      description: "",
-      url: "restaurante"
-    },
+    }
   ]
 
   const navbarItems = [
