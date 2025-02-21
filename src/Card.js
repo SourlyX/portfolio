@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Button from './Button'
 
-const StyledCard = styled.div` // Renombramos aquí
+const StyledCard = styled.div`
   width: 27%;
   min-width: 175px;
   color: #E0E0E0;
@@ -19,6 +19,7 @@ const StyledCard = styled.div` // Renombramos aquí
   justify-content: center;
   position: relative;
   transition: opacity 0.3s;
+  z-index: 1;
 
   ${({ inDevelopment }) =>
     inDevelopment &&
@@ -30,6 +31,32 @@ const StyledCard = styled.div` // Renombramos aquí
   &:hover {
     background-color: #34495E;
   }
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -10;
+
+  ${({ inDevelopment }) =>
+    inDevelopment &&
+    css`
+      opacity: 1;
+      z-index: 10;
+    `}
 `
 
 const CardImage = styled.img`
@@ -53,30 +80,6 @@ const CardDescription = styled.div`
   align-items: center;
   padding: 20px;
   color: #E0E0E0;
-`
-
-const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #FFFFFF;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  opacity: 0;
-  transition: opacity 0.3s;
-
-  ${({ inDevelopment }) =>
-    inDevelopment &&
-    css`
-      opacity: 1;
-    `}
 `
 
 function Cards({ title, description, image, url, inDevelopment, text }) {
