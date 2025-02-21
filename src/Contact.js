@@ -113,14 +113,14 @@ const Contact = forwardRef((props, ref) => {
       });
       
       if (response.ok) {
-        alert('Mensaje enviado!');
+        alert('Menssage sent!');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        alert('Hubo un error al enviar el mensaje.');
+        alert('Contact currently on development.');
       }
     } catch (error) {
       console.error(error);
-      alert('Hubo un error al enviar el mensaje.');
+      alert('Contact currently on development.');
     }
   }
 
