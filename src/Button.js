@@ -30,13 +30,13 @@ const Button = ({ url, filePath, text }) => {
       link.click()
       link.remove()
     }
-  };
+  }
 
   return (
     <GenericButton onClick={handleClick}>
       {text}
     </GenericButton>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

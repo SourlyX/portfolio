@@ -241,7 +241,7 @@ function App() {
       focuses entirely on front-end functionality, fetching data dynamically from the API. It showcases my ability to work with external APIs and create \
       interactive user experiences.",
       url: "pokedex",
-      inDevelopment: true
+      inDevelopment: false
     }
   ]
 
