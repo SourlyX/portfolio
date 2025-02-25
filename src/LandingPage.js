@@ -16,10 +16,11 @@ const LandingPageContainer = styled.div`
 `
 
 const ButtonContainer = styled.div`
-  position: absolute;
-  top: 2.7rem;
+  position: fixed;
+  top: calc(1.5rem + 5px);
   right: 10px;
   text-align: right;
+  z-index: 999;
 `
 
 const ProfileImage = styled.img`
@@ -33,7 +34,7 @@ const ProfileImage = styled.img`
 const Name = styled.h1`
   font-size: 3rem;
   margin-bottom: 10px;
-  color: #55F5ED; /* Color turquesa para el nombre */
+  color: #55F5ED;
 `
 
 const Role = styled.h2`

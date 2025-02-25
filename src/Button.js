@@ -9,7 +9,6 @@ const GenericButton = styled.button`
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 10px;
 
   &:hover {
     background-color: #4AE5E0;

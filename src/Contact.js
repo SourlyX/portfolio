@@ -16,7 +16,7 @@ const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 100%;
   max-width: 350px;
 `
 
