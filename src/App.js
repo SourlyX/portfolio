@@ -30,7 +30,7 @@ function App() {
 
   const frontendCards = [
     {
-      image: "images/skills/HTML5.png",
+      image: "images/skills/html5.png",
       title: "HTML5",
       description: "I use HTML5 to structure my web applications. It provides me with the foundation to create responsive, semantic, and accessible websites. By leveraging elements like <header>, <footer>, and <section>, I ensure my projects are both modern and organized."
     },
@@ -188,7 +188,7 @@ function App() {
       description: "Actively paying attention to others' ideas, concerns, and feedback, ensuring better collaboration and understanding."
     },
     {
-      image: "images/softskills/Networking.png",
+      image: "images/softskills/networking.png",
       title: "Networking" ,
       description: "Building professional relationships within and outside the company to share knowledge, seek guidance, and explore new opportunities."
     },
