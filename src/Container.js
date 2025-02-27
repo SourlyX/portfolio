@@ -13,6 +13,12 @@ const CardContainer = styled.div`
   background-color: #1F1F1F;
   border-radius: 8px;
   margin-bottom: 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 12px;
+    margin: 8px;
+  }
 `
 
 const Title = styled.h1`

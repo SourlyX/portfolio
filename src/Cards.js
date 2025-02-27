@@ -31,12 +31,6 @@ const StyledCard = styled.div`
   &:hover {
     background-color: #34495E;
   }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    padding: 12px;
-    margin: 8px;
-  }
 `
 
 const Overlay = styled.div`

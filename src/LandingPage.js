@@ -14,9 +14,9 @@ const LandingPageContainer = styled.div`
   width: 90%;
   border-bottom: 2px solid #55F5ED;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     width: 100%;
-    padding: 16px; /* Ajusta el padding para que no quede pegado a los bordes */
+    padding: 0;
   }
 `
 
