@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components'
 import Button from './Button'
 
 const StyledCard = styled.div`
-  width: 100%;
   max-width: 29.972% ;
   color: #E0E0E0;
   flex-grow: 1;
@@ -30,6 +29,12 @@ const StyledCard = styled.div`
 
   &:hover {
     background-color: #34495E;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 2px;
+    margin: 0;
   }
 `
 
