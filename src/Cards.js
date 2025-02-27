@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components'
 import Button from './Button'
 
 const StyledCard = styled.div`
-  width: 27%;
-  min-width: 400px;
+  width: 100%;
+  max-width: 29.972% ;
   color: #E0E0E0;
   flex-grow: 1;
   background-color: #2C3E50;
@@ -30,6 +30,12 @@ const StyledCard = styled.div`
 
   &:hover {
     background-color: #34495E;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 12px;
+    margin: 8px;
   }
 `
 
