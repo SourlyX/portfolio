@@ -13,6 +13,11 @@ const LandingPageContainer = styled.div`
   color: #f5f5f5;
   width: 90%;
   border-bottom: 2px solid #55F5ED;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 16px; /* Ajusta el padding para que no quede pegado a los bordes */
+  }
 `
 
 const ButtonContainer = styled.div`
