@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import Button from './Button'
 
 const StyledCard = styled.div`
-  max-width: 29.972% ;
+  width: 29.972% ;
   color: #E0E0E0;
   flex-grow: 1;
   background-color: #2C3E50;
@@ -32,11 +32,10 @@ const StyledCard = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
     width: 100% ;
     padding: 2px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 `
 
