@@ -32,7 +32,7 @@ const StyledCard = styled.div`
     background-color: #34495E;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     padding: 12px;
     margin: 8px;
