@@ -1,6 +1,8 @@
-import React, { useState, forwardRef } from 'react';
+import React, { useState, forwardRef } from 'react'
 import styled from 'styled-components'
+import emailjs from '@emailjs/browser'
 
+// Estilos (sin cambios)
 const Container = styled.div`
   width: 98%;
   flex-direction: column;
@@ -88,7 +90,7 @@ const ContactDetail = styled.p`
   margin: 5px 0;
 `
 
-
+// Componente
 const Contact = forwardRef((props, ref) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -102,64 +104,65 @@ const Contact = forwardRef((props, ref) => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    }
+    
     try {
-      const response = await fetch('http://localhost:5000/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      if (response.ok) {
-        alert('Menssage sent!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert('Contact currently on development.');
-      }
+      await emailjs.send(
+        'service_65q8mom',
+        'template_uxanshy',
+        templateParams,
+        'XxvXqvM9XjW6n9XPA'
+      )
+      alert('Email sent!')
+      setFormData({ name: '', email: '', message: '' })
     } catch (error) {
-      console.error(error);
-      alert('Contact currently on development.');
+      console.error(error)
+      alert('Failed to send email. Please try again later.', error)
     }
   }
 
   return (
     <Container id="contact">
-    <ContactContainer ref={ref}>
-      <Title>Contact</Title>
-      <Form onSubmit={handleSubmit}>
-        <Input 
-          type="text" 
-          name="name" 
-          placeholder="Your name" 
-          value={formData.name} 
-          onChange={handleChange} 
-          required 
-        />
-        <Input 
-          type="email" 
-          name="email" 
-          placeholder="Your e-mail" 
-          value={formData.email} 
-          onChange={handleChange} 
-          required 
-        />
-        <Textarea 
-          name="message" 
-          rows="5" 
-          placeholder="Message" 
-          value={formData.message} 
-          onChange={handleChange} 
-          required 
-        />
-        <SubmitButton type="submit">Send</SubmitButton>
-      </Form>
-      <ContactInfo>
-        <ContactDetail>Email: luisferuatrabajos@gmail.com</ContactDetail>
-        <ContactDetail>Teléfono: +(506) 6005 7935</ContactDetail>
-      </ContactInfo>
-    </ContactContainer>
+      <ContactContainer ref={ref}>
+        <Title>Contact</Title>
+        <Form onSubmit={handleSubmit}>
+          <Input 
+            type="text" 
+            name="name" 
+            placeholder="Your name"
+            value={formData.name}
+            onChange={handleChange}
+            required 
+          />
+          <Input 
+            type="email" 
+            name="email" 
+            placeholder="Your e-mail" 
+            value={formData.email} 
+            onChange={handleChange} 
+            required 
+          />
+          <Textarea 
+            name="message" 
+            rows="5" 
+            placeholder="Message" 
+            value={formData.message}
+            onChange={handleChange} 
+            required 
+          />
+          <SubmitButton type="submit">Send</SubmitButton>
+        </Form>
+        <ContactInfo>
+          <ContactDetail>Email: luisferuatrabajos@gmail.com</ContactDetail>
+          <ContactDetail>Teléfono: +(506) 6005 7935</ContactDetail>
+        </ContactInfo>
+      </ContactContainer>
     </Container>
   )
 })
