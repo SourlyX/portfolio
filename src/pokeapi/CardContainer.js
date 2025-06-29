@@ -18,7 +18,7 @@ const Container = styled.div`
   justify-content: center;
 `
 
-function CardContainer({ pokemons }) {
+function CardContainer({ pokemons }) { //Pokemons = all pokemons pulled
   const [detailedPokemons, setDetailedPokemons] = useState([])
   const [evolutionChain, setChain] = useState([])
   const [cards, setCards] = useState([])
@@ -26,15 +26,15 @@ function CardContainer({ pokemons }) {
   useEffect(() => {
     const fetchPokemonData = async () => {
       try {
-        // Obtenemos detalles de todos los Pokémon
+        // Details of all pokemons
         const detailedDataPromises = pokemons.map(async (pokemon) => {
-          const response = await Axios.get(pokemon.url)
+          const response = await Axios.get(pokemon.url) // Archiving the URLs of the Pokemons
           return { ...response.data }
         })
 
         const detailedData = await Promise.all(detailedDataPromises)
 
-        // Remueve duplicados y ordena por índice del juego
+        // Remove duplicates and orders them per game index
         const uniquePokemons = detailedData.filter((pokemon, index, self) => {
           const gameIndex = pokemon.game_indices[3]?.game_index || 0
           return (
@@ -47,8 +47,9 @@ function CardContainer({ pokemons }) {
         })
 
         setDetailedPokemons(uniquePokemons)
+        console.log(detailedPokemons)
 
-        // Obtiene las cadenas evolutivas
+        // Obtain evolution chains for each unique Pokémon
         const chainPromises = uniquePokemons.map(async (pokemon) => {
           const speciesResponse = await Axios.get(pokemon.species.url)
           const chainsResponse = await Axios.get(speciesResponse.data.evolution_chain.url)
@@ -57,23 +58,23 @@ function CardContainer({ pokemons }) {
 
         const chains = await Promise.all(chainPromises)
 
-        // Filtra cadenas evolutivas únicas
+        // Filter unique chains based on species name
         const uniqueChains = chains.filter((chain, index, self) => {
           return self.findIndex(c => c.chain.species.name === chain.chain.species.name) === index
         })
 
         setChain(uniqueChains)
 
-        // Generamos los Cards con las cadenas evolutivas asociadas
+        // Generate cards for each unique evolution chain
         const pokemonWithCards = uniquePokemons.map(pokemon => {
           const chainData = hasChain(pokemon.name, uniqueChains)
 
-          // Filtra Pokémon de la misma cadena
+          // Filter related Pokémon that are part of the same evolution chain
           const relatedPokemons = uniquePokemons.filter(p => {
             return isPartOfChain(p.name, chainData)
           })
 
-          // Genera los Cards renderizados de esta cadena
+          // Generate cards for related Pokémon
           const relatedCards = relatedPokemons.map(p => (
             <Card key={p.id} pokemon={p}/>
           ))
@@ -84,6 +85,7 @@ function CardContainer({ pokemons }) {
         })
 
         setCards(pokemonWithCards)
+        console.log(cards)
       } catch (error) {
         console.error("Error fetching Pokémon data:", error)
       }

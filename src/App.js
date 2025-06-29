@@ -285,6 +285,5 @@ export default App
   Crear twitter de programador
   Proyectos (descripcion, imagen, tecnologias, código)
   Poner pocos proyectos en la pagina de home
-  Hobbies (recomendado)
   Categorizar habilidades tecnicas (front/back/...)
 */}

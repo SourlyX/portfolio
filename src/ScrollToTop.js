@@ -9,14 +9,11 @@ const ScrollButton = styled.button`
   cursor: pointer;
   z-index: 999;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-
-  opacity: ${({ show }) => (show ? 1 : 0)};
-  transform: ${({ show }) => (show ? 'scale(1)' : 'scale(0.9)')};
-  
-  /* 🔹 Hace que el botón sea completamente transparente */
+  opacity: ${({ $show }) => ($show ? 1 : 0)};
+  transform: ${({ $show }) => ($show ? 'scale(1)' : 'scale(0.9)')};
   background: none;
   padding: 0;
-  
+
   img {
     width: 50px;
     height: 50px;
@@ -35,7 +32,6 @@ const ScrollToTop = () => {
     const handleScroll = () => {
       setShowButton(window.scrollY > 300)
     }
-
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -45,7 +41,7 @@ const ScrollToTop = () => {
   }
 
   return (
-    <ScrollButton onClick={scrollToTop} show={showButton}>
+    <ScrollButton onClick={scrollToTop} $show={showButton}>
       <img src="/images/up-arrow.png" alt="Subir" />
     </ScrollButton>
   )

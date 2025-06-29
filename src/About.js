@@ -214,15 +214,20 @@ const AboutPage = () => {
       <h1>About Me</h1>
       <SectionTitle>Brief Introduction</SectionTitle>
       <SectionText>
-        Hi, my name is Luis Ureña. I'm a sel-taugh programmer because since I was a little kid I wanted to learn how computers work, so programming was my gol when I became an adult.<br/><br/>I'm a hardworking and dedicated person; capable of meeting or exceeding job expectations. Quick learner and eager to continue learning. Self-disciplined. Able to work efficiently with small or large groups of people.
+        Hi, my name is Luis Ureña. I'm a <b>self-taugh programmer</b>. Since I was a little kid I wanted to learn how computers work, so programming was my gol when I became an adult.<br/><br/>
+        I'm a hardworking and dedicated person; capable of meeting or exceeding job expectations. Quick learner and <b>eager to continue learning</b> Self-disciplined. 
+        Able to work efficiently with small or large groups of people.
       </SectionText>
       <SectionTitle>Professional Experience</SectionTitle>
       <SectionText>
-        I worked from December 2021 until March 2023 as a QA analyst at Konrad Group.<br/><br/> I have been working on self-taught projects, which can be seen <StyledLink href="/projects">here</StyledLink> or by visiting "Projects" in the top menu.
+        I worked from December 2021 until March 2023 as a QA analyst at Konrad Group.<br/><br/>
+        I have been working on self-taught projects, which can be seen <StyledLink href="/projects">here</StyledLink> or by visiting "Projects" in the top menu.
       </SectionText>
       <SectionTitle>Education</SectionTitle>
       <SectionText>
-        Bachelor's degree in high school education at "Liceo de Curridabat"
+        Bachelor's degree in high school education at "Liceo de Curridabat".<br/><br/>
+        Diploma in Computer Science · UNED · Currently studying.<br/><br/>
+        I have completed several online courses and certifications in various programming languages and technologies, which can be found bellow.
       </SectionText>
       <SectionTitle>Certifications</SectionTitle>
       <Cert>
@@ -239,7 +244,7 @@ const AboutPage = () => {
       ))}</Cert>
       <SectionTitle>Skills</SectionTitle>
       <SectionText>
-        I'm proficient in JavaScript, Java, Node.js, C, C++, Assembly, AngularJS, SQL, and C#. However, the ones I master the most are React, HTML, CSS, MongoDB, and Python with the Flask framework.
+        I master React, HTML, CSS, MongoDB, and Python with the Flask framework. I'm also proficient in JavaScript, Java, Node.js, C, C++, Assembly, AngularJS, SQL, and C#.
       </SectionText>
       <SectionTitle>Interests</SectionTitle>
       <SectionText>
@@ -251,7 +256,7 @@ const AboutPage = () => {
       </SectionText>
       <SectionTitle>Languages</SectionTitle>
       <SectionText>
-        I'm fluent in both English and Spanish, both spoken and written, with strong communication skills in both languages.
+        I'm fluent in both English and Spanish, with strong spoken and written communication skills in both languages.
       </SectionText>
     </AboutPageContainer>
   )

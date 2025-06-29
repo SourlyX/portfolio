@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import Button from './Button'
 
 const StyledCard = styled.div`
-  width: 29.972% ;
+  width: 29.5% ;
   color: #E0E0E0;
   flex-grow: 1;
   background-color: #2C3E50;
@@ -20,8 +20,8 @@ const StyledCard = styled.div`
   transition: opacity 0.3s;
   z-index: 1;
 
-  ${({ inDevelopment }) =>
-    inDevelopment &&
+  ${({ $inDevelopment }) =>
+    $inDevelopment &&
     css`
       opacity: 0.6;
       pointer-events: none;
@@ -57,8 +57,8 @@ const Overlay = styled.div`
   transition: opacity 0.3s;
   z-index: -10;
 
-  ${({ inDevelopment }) =>
-    inDevelopment &&
+  ${({ $inDevelopment }) =>
+    $inDevelopment &&
     css`
       opacity: 1;
       z-index: 10;
@@ -90,14 +90,14 @@ const CardDescription = styled.div`
 
 function Cards({ title, description, image, url, inDevelopment, text }) {
   return (
-    <StyledCard inDevelopment={inDevelopment}>
+    <StyledCard $inDevelopment={inDevelopment}>
       <CardDescription>
         <CardTitle>{title}</CardTitle>
         <p>{description}</p>
         {url && <Button url={url} text={text} />}
       </CardDescription>
       <CardImage src={image} alt="Project" />
-      <Overlay inDevelopment={inDevelopment}>
+      <Overlay $inDevelopment={inDevelopment}>
         Currently in development
       </Overlay>
     </StyledCard>
