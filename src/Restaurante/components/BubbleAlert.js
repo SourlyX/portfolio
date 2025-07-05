@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react"
 
 const styles = {
   bubbleAlert: {
@@ -7,25 +7,21 @@ const styles = {
     color: '#fff',
     padding: '2px 10px',
     fontSize: '0.9rem',
-    width: '20px'
-  }
+    width: '20px',
+  },
 }
 
-class BubbleAlert extends Component {
+const BubbleAlert = ({ value }) => {
+  const getNumber = (n) => {
+    if (!n) return '';
+    return n > 9 ? '9+' : n
+  };
 
-  getNumber(n){
-    if (!n) {return ''}
-    return n>9 ? '9+' : n
-  }
-
-  render() {
-    const {value} = this.props
-    return(
-      <span style={styles.bubbleAlert}>
-        {this.getNumber(value)}
-      </span>
-    )
-  }
-}
+  return (
+    <span style={styles.bubbleAlert}>
+      {getNumber(value)}
+    </span>
+  );
+};
 
 export default BubbleAlert
