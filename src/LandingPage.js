@@ -45,7 +45,7 @@ const Name = styled.h1`
 const Role = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #E61C4D; /* Color rojo para el rol */
+  color: #E61C4D;
 `
 
 const Introduction = styled.p`
@@ -68,10 +68,8 @@ const LandingPage = () => {
       <Name>Luis Ureña Arosemena</Name>
       <Role>Full-Stack Developer</Role>
       <Introduction>
-        Hi! I'm a full-stack developer specialized in MERN stack projects. 
-        With a passion for creating robust and efficient web applications, 
-        I focus on delivering high-quality solutions using MongoDB, Express, 
-        React, and Node.js.
+        Hi! I'm a full-stack MERN developer passionate about building robust, scalable web apps.
+        I specialize in MongoDB, Express, React, and Node.js, delivering clean, efficient code and great user experiences.
       </Introduction>
     </LandingPageContainer>
   )
