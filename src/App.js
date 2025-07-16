@@ -45,7 +45,7 @@ function App() {
       description: "Git for version control, Jira for Agile project management, and Scrum methodologies."
     },
     {
-      image: "images/skills/ai.png",
+      image: "images/skills/AI.png",
       title: "AI-assisted development",
       description: "I leverage AI tools like ChatGPT and GitHub Copilot to boost productivity, debug faster, and write better code."
     }
