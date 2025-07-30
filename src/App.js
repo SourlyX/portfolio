@@ -23,7 +23,6 @@ const MainApp = styled.div`
   justify-content: center;
 `
 
-
 function App() {
 
   const contactRef = useRef(null)

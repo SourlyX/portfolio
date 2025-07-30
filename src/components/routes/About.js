@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Certification from "../Certification"
+import TimeLine from "./TimeLine"
 
 const certificationsData = [
   {
@@ -206,8 +207,6 @@ const SectionText = styled.p`
   }
 `
 
-
-
 const AboutPage = () => {
   return (
     <AboutPageContainer>
@@ -219,10 +218,7 @@ const AboutPage = () => {
         Able to work efficiently with small or large groups of people.
       </SectionText>
       <SectionTitle>Professional Experience</SectionTitle>
-      <SectionText>
-        I worked from December 2021 until March 2023 as a QA analyst at Konrad Group.<br/><br/>
-        I have been working on self-taught projects, which can be seen <StyledLink href="/projects">here</StyledLink> or by visiting "Projects" in the top menu.
-      </SectionText>
+      <TimeLine/>
       <SectionTitle>Education</SectionTitle>
       <SectionText>
         Bachelor's degree in high school education at "Liceo de Curridabat".<br/><br/>
