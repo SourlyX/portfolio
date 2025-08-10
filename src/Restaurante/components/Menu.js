@@ -1,57 +1,47 @@
-import React, { Component } from "react";
-import Productos from "./Productos";
+import React, { useState } from "react"
+import Productos from "./Productos"
 
-class Menu extends Component{
+const Menu = ({ addToCart, productos, postres, bebidas, guarniciones, carro, referencias, referenciasMenu, tiposPlato, terminosCarne }) => {
+  const [menu, setMenu] = useState(tiposPlato[0])
 
-  constructor(props) {
-    super(props);
-    this.state = {
-        menu: this.props.tiposPlato[0]
-    }
-  }
-  
-  handleChange = ({target}) => {
-    this.setState((state) => ({
-      ...state,
-      [target.name]: target.value
-    }))
+  const handleChange = ({ target }) => {
+    setMenu(target.value)
   }
 
-  render(){
-    const {addToCart, productos, postres, bebidas, guarniciones, carro, referencias, referenciasMenu, tiposPlato, terminosCarne} = this.props
-    //console.log(tiposPlato)
-    return(
-      <div>
-        <div className="line">
-        {tiposPlato.map(tipo => {
-          return <input
-            onClick={this.handleChange}
+  const productosFiltrados =
+    menu === tiposPlato[1]
+      ? guarniciones
+      : menu === tiposPlato[2]
+        ? bebidas
+        : menu === tiposPlato[3]
+          ? postres
+          : productos
+
+  return (
+    <div>
+      <div className="line">
+        {tiposPlato.map(tipo => (
+          <input
+            onClick={handleChange}
             key={tipo}
             className="fullwidth"
             name="menu"
             type="submit"
             value={tipo}
           />
-        })}
+        ))}
       </div>
-        <Productos
-          addToCart = {addToCart}
-          productos = {this.state.menu === tiposPlato[1]
-            ? guarniciones
-            : this.state.menu === tiposPlato[2]
-              ? bebidas
-              : this.state.menu === tiposPlato[3]
-                ? postres
-                : productos}
-          guarniciones = {guarniciones}
-          terminosCarne = {terminosCarne}
-          carro = {carro}
-          referencias = {referencias}
-          referenciasMenu = {referenciasMenu}
-        />
-      </div>
-    )
-  }
+      <Productos
+        addToCart={addToCart}
+        productos={productosFiltrados}
+        guarniciones={guarniciones}
+        terminosCarne={terminosCarne}
+        carro={carro}
+        referencias={referencias}
+        referenciasMenu={referenciasMenu}
+      />
+    </div>
+  )
 }
 
 export default Menu

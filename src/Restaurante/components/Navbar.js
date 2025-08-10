@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react"
 import Logo from './Logo'
 import Carro from './Carro'
 
@@ -15,21 +15,18 @@ const styles = {
   }
 }
 
-class Navbar extends Component{
-  render(){
-    const {carro, esCarroVisible, showCart, removeFromCart} = this.props
-    return(
-      <nav style={styles.navbar}>
-        <Logo />
-        <Carro
-          carro={carro}
-          esCarroVisible={esCarroVisible}
-          showCart={showCart}
-          removeFromCart={removeFromCart}
-        />
-      </nav>
-    )
-  }
+const Navbar = ({ carro, esCarroVisible, showCart, removeFromCart }) => {
+  return (
+    <nav style={styles.navbar}>
+      <Logo />
+      <Carro
+        carro={carro}
+        esCarroVisible={esCarroVisible}
+        showCart={showCart}
+        removeFromCart={removeFromCart}
+      />
+    </nav>
+  )
 }
 
 export default Navbar
