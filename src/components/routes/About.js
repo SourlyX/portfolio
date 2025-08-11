@@ -250,10 +250,12 @@ const AboutPage = () => {
       <SectionTitle>Professional Experience</SectionTitle>
         <TimeLine/>
       <SectionTitle>Education</SectionTitle>
-      <SectionText>
-        Bachelor's degree in high school education at "Liceo de Curridabat".<br/><br/>
-        Diploma in Computer Science · UNED · Currently studying.<br/><br/>
-        I have completed several online courses and certifications in various programming languages and technologies, which can be found bellow.
+      <SectionText style={{ marginBottom:'2rem' }}>
+        <ul>
+          <li>🏫 Bachelor's degree in high school education at "Liceo de Curridabat". 🧠</li>
+          <li>🎓 Diploma in Computer Science · UNED · Currently studying. 📜</li>
+          <li>📚 I have completed several online courses and certifications in various programming languages and technologies, which can be found bellow. 🖥️</li>
+        </ul>
        </SectionText>
        <SectionTitle>Certifications</SectionTitle>
        <Cert>
