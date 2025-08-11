@@ -2,6 +2,40 @@ import React from "react"
 import styled from "styled-components"
 import Certification from "../Certification"
 import TimeLine from "./TimeLine"
+import Container from '../projects/Container'
+
+const introCards = [
+  {
+    title: "Passion",
+    description: "Self-taught programmer with curiosity since childhood.",
+    image: "images/Passion.png"
+  },
+  {
+    title: "Work Ethic",
+    description: "Hardworking and disciplined, focused on delivering results.",
+    image: "images/WorkEthic.png"
+  },
+  {
+    title: "Team Player",
+    description: "Thrives both independently and in group environments.",
+    image: "images/TeamPlayer.png"
+  },
+  {
+    title: "AI-Powered",
+    description: "I leverage AI tools like ChatGPT and Copilot to boost productivity and code quality.",
+    image: "images/AI.png"
+  },
+  {
+    title: "Creative Problem Solver",
+    description: "I often find 'unconventional' solutions that others might overlook.",
+    image: "images/CreativeThinking.png"
+  },
+  {
+    title: "Methodical & Results-Oriented",
+    description: "I approach work with discipline and clear focus on achieving goals.",
+    image: "images/Methodical.png"
+  }
+]
 
 const certificationsData = [
   {
@@ -210,51 +244,47 @@ const SectionText = styled.p`
 const AboutPage = () => {
   return (
     <AboutPageContainer>
-      <h1>About Me</h1>
+      <h1 style={{ fontSize: '3rem' }}>About Me</h1>
       <SectionTitle>Brief Introduction</SectionTitle>
-      <SectionText>
-        Hi, my name is Luis Ureña. I'm a <b>self-taugh programmer</b>. Since I was a little kid I wanted to learn how computers work, so programming was my gol when I became an adult.<br/><br/>
-        I'm a hardworking and dedicated person; capable of meeting or exceeding job expectations. Quick learner and <b>eager to continue learning</b> Self-disciplined. 
-        Able to work efficiently with small or large groups of people.
-      </SectionText>
+        <Container cards={introCards}/>
       <SectionTitle>Professional Experience</SectionTitle>
-      <TimeLine/>
+        <TimeLine/>
       <SectionTitle>Education</SectionTitle>
       <SectionText>
         Bachelor's degree in high school education at "Liceo de Curridabat".<br/><br/>
         Diploma in Computer Science · UNED · Currently studying.<br/><br/>
         I have completed several online courses and certifications in various programming languages and technologies, which can be found bellow.
-      </SectionText>
-      <SectionTitle>Certifications</SectionTitle>
-      <Cert>
-      {certificationsData.map((certification, index) => (
-        <Certification
-          key={index}
-          title={certification.title}
-          company={certification.company}
-          date={certification.date}
-          credentialId={certification.credentialId}
-          imagePath={certification.imagePath}
-          skills={certification.skills}
-        />
-      ))}</Cert>
-      <SectionTitle>Skills</SectionTitle>
-      <SectionText>
+       </SectionText>
+       <SectionTitle>Certifications</SectionTitle>
+       <Cert>
+       {certificationsData.map((certification, index) => (
+         <Certification
+           key={index}
+           title={certification.title}
+           company={certification.company}
+           date={certification.date}
+           credentialId={certification.credentialId}
+           imagePath={certification.imagePath}
+           skills={certification.skills}
+         />
+       ))}</Cert>
+       <SectionTitle>Skills</SectionTitle>
+       <SectionText>
         I master React, HTML, CSS, MongoDB, and Python with the Flask framework. I'm also proficient in JavaScript, Java, Node.js, C, C++, Assembly, AngularJS, SQL, and C#.
-      </SectionText>
-      <SectionTitle>Interests</SectionTitle>
-      <SectionText>
+       </SectionText>
+       <SectionTitle>Interests</SectionTitle>
+       <SectionText>
         I enjoy reading novels, especially science fiction or fantasy, playing video games, and programming as a hobby.
-      </SectionText>
-      <SectionTitle>Professional Goals</SectionTitle>
-      <SectionText>
+       </SectionText>
+       <SectionTitle>Professional Goals</SectionTitle>
+       <SectionText>
         My short-term goals are to work for a programming company and build knowledge with my colleagues. My long-term goals are to become a senior developer to be able to help other people with their programming problems.
-      </SectionText>
-      <SectionTitle>Languages</SectionTitle>
-      <SectionText>
+       </SectionText>
+       <SectionTitle>Languages</SectionTitle>
+       <SectionText>
         I'm fluent in both English and Spanish, with strong spoken and written communication skills in both languages.
-      </SectionText>
-    </AboutPageContainer>
+       </SectionText>
+   </AboutPageContainer>
   )
 }
 
