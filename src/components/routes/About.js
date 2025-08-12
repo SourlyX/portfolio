@@ -192,6 +192,49 @@ const certificationsData = [
   },
 ]
 
+const skills = [
+  {
+    name: "React",
+    icon: "/images/skills/React.svg",
+    description: "Frontend library for building UI components."
+  },
+  {
+    name: "JavaScript",
+    icon: "/images/skills/JavaScript.svg",
+    description: "Dynamic programming language for web development."
+  },
+  {
+    name: "MongoDB",
+    icon: "/images/skills/MongoDB.svg",
+    description: "NoSQL database for scalable and flexible applications."
+  },
+  {
+    name: "HTML5",
+    icon: "/images/skills/HTML5.svg",
+    description: "Markup language for structuring web content."
+  },
+  {
+    name: "CSS3",
+    icon: "/images/skills/CSS3.svg",
+    description: "Style sheet language for designing web pages."
+  },
+  {
+    name: "Git",
+    icon: "/images/skills/Git.svg",
+    description: "Version control system for tracking code changes."
+  },
+  {
+    name: "Node.js",
+    icon: "/images/skills/Nodejs.svg",
+    description: "JavaScript runtime for building scalable backend applications."
+  },
+  {
+    name: "Express",
+    icon: "/images/skills/Express.svg",
+    description: "Web framework for Node.js to build APIs and web servers."
+  }
+]
+
 const StyledLink = styled.a`
   color: #007bff;
   text-decoration: underline;
@@ -241,6 +284,32 @@ const SectionText = styled.p`
   }
 `
 
+const Grid = styled.section`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  @media (max-width: 1024px) { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 768px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
+`
+
+const Card = styled.div`
+  background: #0f1724;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 6px 16px rgba(2,6,23,0.25);
+`
+
+const Icon = styled.img`
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+`
+
 const AboutPage = () => {
   return (
     <AboutPageContainer>
@@ -271,9 +340,17 @@ const AboutPage = () => {
          />
        ))}</Cert>
        <SectionTitle>Skills</SectionTitle>
-       <SectionText>
-        I master React, HTML, CSS, MongoDB, and Python with the Flask framework. I'm also proficient in JavaScript, Java, Node.js, C, C++, Assembly, AngularJS, SQL, and C#.
-       </SectionText>
+        <Grid>
+          {skills.map(s => (
+            <Card key={s.title} aria-label={s.title}>
+            <Icon src={s.icon} alt={s.title} />
+            <div>
+              <strong>{s.title}</strong>
+              <div style={{fontSize:12, opacity:0.8, display:'inline-block' }}>{s.description}</div>
+            </div>
+            </Card>
+          ))}
+        </Grid>
        <SectionTitle>Interests</SectionTitle>
        <SectionText>
         I enjoy reading novels, especially science fiction or fantasy, playing video games, and programming as a hobby.
