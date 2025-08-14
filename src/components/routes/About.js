@@ -5,6 +5,7 @@ import TimeLine from "./TimeLine"
 import Container from '../projects/Container'
 import Carrousel from "../Carrousel"
 import Carro from "../../Restaurante/components/Carro"
+import data from "../../data.json"
 
 const introCards = [
   {
