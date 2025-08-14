@@ -3,7 +3,7 @@ import Cards from "./Cards"
 import styled from "styled-components"
 
 const CarrouselCards = styled.div`
-  width: 60%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,14 +28,7 @@ const Button = styled.button`
   }
 `
 
-const move = (card, setCard, next, cards) => {
-  if (next){
-    card === cards.length-1 ? setCard(0) : setCard(card + 1)
-  }
-  
-}
-
-function Carrousel ({ cards }) {
+const Carrousel = ({ cards }) => {
   const [actualCard, setActualCard] = useState(0)
   const [fade, setFade] = useState(true)
 

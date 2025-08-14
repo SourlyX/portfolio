@@ -3,7 +3,8 @@ import styled from "styled-components"
 import Certification from "../Certification"
 import TimeLine from "./TimeLine"
 import Container from '../projects/Container'
-import Carrousel from '../Carrousel'
+import Carrousel from "../Carrousel"
+import Carro from "../../Restaurante/components/Carro"
 
 const introCards = [
   {
@@ -35,6 +36,45 @@ const introCards = [
     title: "Methodical & Results-Oriented",
     description: "I approach work with discipline and clear focus on achieving goals.",
     image: "images/Methodical.png"
+  }
+]
+
+const ProfessionalExperience = [
+  {
+    time: "March 2016",
+    description: "I initiated studying Software develpent in college. Since I was a " +
+              "little kid I wanted to be a software developer to create lots of amazing " +
+              "things and I was starting to achieve it."
+  },
+  {
+    time: "April 2019",
+    description: "I got my first full-time job as a customer service representative, " +
+              "since this moment I have had multiple jobs until the present."
+  },
+  {
+    time: "2020",
+    description: "The pandemic started, it became very difficult to continue my carrer " +
+              "in college. I had to stop stuying to continue working."
+  },
+  {
+    time: "June 2021",
+    description: "I took very seriously my goal to be a developer and initiated studying " +
+              "as a self-taught web developer and knew a lot of technologies in the web " +
+              "development world as Django, Flask, Agular, Vue, React and also initiated " +
+              "getting to know the databases as SQL and MongoDB."
+  },
+  {
+    time: "December 2021 - March 2023",
+    description: "QA analyst in Konrad Group: I Helped with system issues with a " +
+              "web and mobile application. Checking it to see the releases were in a " +
+              "good status to released them." +
+              "\nI also had to replicate customer issues to find the problem they " +
+              "were having in the application and forward the issue to the developers."
+  },
+  {
+    time: "August 2025",
+    description: "Besides my knowledge as a sel-taught developer I wanted to continue with " +
+              "my college carrer. I'm currently finishing college to adquire my title."
   }
 ]
 
@@ -254,6 +294,21 @@ const interestsCards = [
   }
 ]
 
+const ProfessionalGoals = [
+  {
+    time: "Short-term",
+    description: "Secure a position as a web developer and contribute to impactful projects while continuing to strengthen my technical expertise."
+  },
+  {
+    time: "Mid-term",
+    description: "Advance within the company by taking on more complex projects, collaborating with cross-functional teams, and expanding my leadership skills."
+  },
+  {
+    time: "Long-term",
+    description: "Become a highly skilled senior developer recognized for delivering efficient, scalable solutions and mentoring junior developers."
+  }
+]
+
 const StyledLink = styled.a`
   color: #007bff;
   text-decoration: underline;
@@ -336,15 +391,13 @@ const AboutPage = () => {
       <SectionTitle>Brief Introduction</SectionTitle>
         <Container cards={introCards}/>
       <SectionTitle>Professional Experience</SectionTitle>
-        <TimeLine/>
+        <TimeLine timestamps={ProfessionalExperience}/>
       <SectionTitle>Education</SectionTitle>
-      <SectionText style={{ marginBottom:'2rem' }}>
         <ul>
           <li>🏫 Bachelor's degree in high school education at "Liceo de Curridabat". 🧠</li>
           <li>🎓 Diploma in Computer Science · UNED · Currently studying. 📜</li>
           <li>📚 I have completed several online courses and certifications in various programming languages and technologies, which can be found bellow. 🖥️</li>
         </ul>
-       </SectionText>
        <SectionTitle>Certifications</SectionTitle>
        <Cert>
        {certificationsData.map((certification, index) => (
@@ -361,8 +414,8 @@ const AboutPage = () => {
        <SectionTitle>Skills</SectionTitle>
         <Grid>
           {skills.map(s => (
-            <Card key={s.title} aria-label={s.title}>
-            <Icon src={s.icon} alt={s.title} />
+            <Card key={s.name} aria-label={s.name}>
+            <Icon src={s.icon} alt={s.name} />
             <div>
               <strong>{s.title}</strong>
               <div style={{fontSize:12, opacity:0.8, display:'inline-block' }}>{s.description}</div>
@@ -370,16 +423,14 @@ const AboutPage = () => {
             </Card>
           ))}
         </Grid>
-       <SectionTitle>Interests</SectionTitle>
-       <Carrousel cards={interestsCards}/>
-       <SectionTitle>Professional Goals</SectionTitle>
-       <SectionText>
-        My short-term goals are to work for a programming company and build knowledge with my colleagues. My long-term goals are to become a senior developer to be able to help other people with their programming problems.
-       </SectionText>
-       <SectionTitle>Languages</SectionTitle>
-       <SectionText>
+      <SectionTitle>Interests</SectionTitle>
+      <Carrousel cards={interestsCards}/>
+      <SectionTitle>Professional Goals</SectionTitle>
+        <TimeLine timestamps={ProfessionalGoals}/>
+      <SectionTitle>Languages</SectionTitle>
+      <SectionText>
         I'm fluent in both English and Spanish, with strong spoken and written communication skills in both languages.
-       </SectionText>
+      </SectionText>
    </AboutPageContainer>
   )
 }

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import Button from './Button'
 
 const StyledCard = styled.div`
-  width: ${props => (props.fullWidth ? '96%' : '29.5%')};
+  width: ${props => (props.fullwidth ? '96%' : '29.5%')};
   color: #E0E0E0;
   flex-grow: 1;
   background-color: #2C3E50;
@@ -88,9 +88,9 @@ const CardDescription = styled.div`
   color: #E0E0E0;
 `
 
-function Cards({ title, description, image, url, inDevelopment, text, fullWidth }) {
+function Cards({ title, description, image, url, inDevelopment, text, fullwidth }) {
   return (
-    <StyledCard $inDevelopment={inDevelopment} fullWidth={fullWidth}>
+    <StyledCard $inDevelopment={inDevelopment} fullwidth={fullwidth}>
       <CardDescription>
         <CardTitle>{title}</CardTitle>
         <p>{description}</p>
