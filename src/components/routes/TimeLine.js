@@ -117,58 +117,18 @@ const Arrow = styled.button`
   `}
 `
 
-const TimeLine = () => {
+const TimeLine = ({ timestamps }) => {
 return (
       <Timeline>
         <ol>
-          <li>
+          {timestamps.map((time, index) => (
+            <li key={index}>
             <div>
-              <time>March 2016</time>
-              <br/>I initiated studying Software develpent in college. Since I was a 
-              little kid I wanted to be a software developer to create lots of amazing 
-              things and I was starting to achieve it.
+              <time>{time.time}</time>
+              <br/><p>{time.description}</p>
             </div>
-          </li>
-          <li>
-            <div>
-              <time>April 2019</time>
-              <br/>I got my first full-time job as a customer service representative, 
-              since this moment I have had multiple jobs until the present.
-            </div>
-          </li>
-          <li>
-            <div>
-              <time>2020</time>
-              <br/>The pandemic started, it became very difficult to continue my carrer 
-              in college. I had to stop stuying to continue working.
-            </div>
-          </li>
-          <li>
-            <div>
-              <time>June 2021</time>
-              <br/>I took very seriously my goal to be a developer and initiated studying 
-              as a self-taught web developer and knew a lot of technologies in the web 
-              development world as Django, Flask, Agular, Vue, React and also initiated
-              getting to know the databases as SQL and MongoDB.
-            </div>
-          </li>
-          <li>
-            <div>
-              <time>December 2021 - March 2023</time>
-              <br/>QA analyst in Konrad Group: I Helped with system issues with a 
-              web and mobile application. Checking it to see the releases were in a 
-              good status to released them.
-              <br/> I also had to replicate customer issues to find the problem they 
-              were having in the application and forward the issue to the developers.
-            </div>
-          </li>
-          <li>
-            <div>
-              <time>August 2025</time>
-              <br/>Besides my knowledge as a sel-taught developer I wanted to continue with 
-              my college carrer. I'm currently finishing college to adquire my title.
-            </div>
-          </li>
+            </li>
+          ))}
         </ol>
 
         {/*<Arrows>

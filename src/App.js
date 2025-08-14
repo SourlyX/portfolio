@@ -12,7 +12,7 @@ import ToDoList from "./components/projects/ToDoList"
 import Restarurante from "./Restaurante/Restaurante"
 import Pokedex from "./components/projects/pokeapi/Pokedex"
 import "./index.css"
-import { Helmet } from "react-helmet"
+import { HelmetProvider } from "react-helmet-async"
 import { Routes, Route } from "react-router-dom"
 
 const MainApp = styled.div`
@@ -146,11 +146,11 @@ function App() {
   
   return (
     <MainApp>
-      <Helmet>
+      <HelmetProvider>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
-      </Helmet>
+      </HelmetProvider>
       <Navbar items={navbarItems} contactRef={contactRef} />
       <ScrollToTop/>
       <Routes>

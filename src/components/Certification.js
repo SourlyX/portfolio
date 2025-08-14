@@ -49,6 +49,11 @@ const CredentialId = styled.p`
   color: #E0E0E0;
 `
 
+const fadeIn = keyframes`
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+`
+
 const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -66,11 +71,6 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   max-width: 90%;
   max-height: 90%;
-`
-
-const fadeIn = keyframes`
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
 `
 
 const Certification = ({ title, company, date, credentialId, imagePath }) => {
@@ -94,7 +94,7 @@ const Certification = ({ title, company, date, credentialId, imagePath }) => {
           <CredentialId>Credential ID: {credentialId}</CredentialId>
         </>
       )}
-      <ImageContainer show={showImage}>
+      <ImageContainer $show={showImage}>
         <Image src={imagePath} alt="Credential Image" />
       </ImageContainer>
     </CertificationContainer>
