@@ -47,7 +47,6 @@ function CardContainer({ pokemons }) { //Pokemons = all pokemons pulled
         })
 
         setDetailedPokemons(uniquePokemons)
-        console.log(detailedPokemons)
 
         // Obtain evolution chains for each unique Pokémon
         const chainPromises = uniquePokemons.map(async (pokemon) => {
@@ -85,7 +84,6 @@ function CardContainer({ pokemons }) { //Pokemons = all pokemons pulled
         })
 
         setCards(pokemonWithCards)
-        console.log(cards)
       } catch (error) {
         console.error("Error fetching Pokémon data:", error)
       }

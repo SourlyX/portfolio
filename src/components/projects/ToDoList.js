@@ -31,7 +31,7 @@ const Text = styled.p`
   width: 90%;
   padding: 0 5px;
   text-align: center;
-  text-decoration: ${({ active }) => (!active ? 'line-through' : 'none')};
+  text-decoration: ${({ $active }) => (!$active ? 'line-through' : 'none')};
   color: #f5f5f5;
 `
 
@@ -104,10 +104,10 @@ const ToDoList = ({ todos, setTodos }) => {
             <input
               type="checkbox"
               checked={!todo.active}
-              onClick={() => handleClick(index)}
+              onChange={() => handleClick(index)}
               style={{ cursor: "pointer", margin: "0 10px 0 10px" }}
             />
-            <Text active={todo.active}>{todo.name}</Text>
+            <Text $active={todo.active}>{todo.name}</Text>
             <Bin
               src="/images/restaurante/garbage.png"
               alt="Garbage Icon"
