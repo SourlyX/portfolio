@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Certification from "../Certification"
 import TimeLine from "./TimeLine"
 import Container from '../projects/Container'
+import Carrousel from '../Carrousel'
 
 const introCards = [
   {
@@ -235,6 +236,24 @@ const skills = [
   }
 ]
 
+const interestsCards = [
+  {
+    title: "Reading",
+    description: "Exploring novels, especially sci-fi and fantasy worlds.",
+    image: "images/Interests/Reading.png"
+  },
+  {
+    title: "Gaming",
+    description: "Immersing in video games for fun and inspiration.",
+    image: "images/Interests/Gaming.png"
+  },
+  {
+    title: "Programming",
+    description: "Building projects and experimenting with code as a hobby.",
+    image: "images/Interests/Programming.png"
+  }
+]
+
 const StyledLink = styled.a`
   color: #007bff;
   text-decoration: underline;
@@ -352,9 +371,7 @@ const AboutPage = () => {
           ))}
         </Grid>
        <SectionTitle>Interests</SectionTitle>
-       <SectionText>
-        I enjoy reading novels, especially science fiction or fantasy, playing video games, and programming as a hobby.
-       </SectionText>
+       <Carrousel cards={interestsCards}/>
        <SectionTitle>Professional Goals</SectionTitle>
        <SectionText>
         My short-term goals are to work for a programming company and build knowledge with my colleagues. My long-term goals are to become a senior developer to be able to help other people with their programming problems.
