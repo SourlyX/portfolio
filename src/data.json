@@ -194,7 +194,7 @@
       "company": "Skillsoft",
       "date": "Jul. 2023",
       "credentialId": "5509907",
-      "imagePath": "/images/certifications/ASP.NET MVC Web Applications Introduction.png",
+      "imagePath": "/images/certifications/ASPMVC.png",
       "skills": "C# · .NET Framework · Computer Science"
     },
     {
@@ -384,6 +384,25 @@
     {
       "time": "Long-term",
       "description": "Become a highly skilled senior developer recognized for delivering efficient, scalable solutions and mentoring junior developers."
+    }
+  ],
+
+  "Languages": [
+    {
+      "name": "Spanish",
+      "progress": "100"
+    },
+    {
+      "name": "English",
+      "progress": "90"
+    },
+    {
+      "name": "German",
+      "progress": "33"
+    },
+    {
+      "name": "Esperanto",
+      "progress": "41"
     }
   ]
 }

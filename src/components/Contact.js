@@ -2,7 +2,6 @@ import React, { useState, forwardRef } from 'react'
 import styled from 'styled-components'
 import emailjs from '@emailjs/browser'
 
-// Estilos (sin cambios)
 const Container = styled.div`
   width: 98%;
   flex-direction: column;

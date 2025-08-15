@@ -60,12 +60,12 @@ const ImageContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  display: ${props => (props.show ? 'flex' : 'none')};
+  display: ${props => (props.$show ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
   background-color: #3B3F46;
   border-radius: 8px;
-  animation: ${props => (props.show ? fadeIn : 'none')} 0.3s ease-in-out;
+  animation: ${props => (props.$show ? fadeIn : 'none')} 0.3s ease-in-out;
 `
 
 const Image = styled.img`

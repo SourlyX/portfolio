@@ -4,311 +4,8 @@ import Certification from "../Certification"
 import TimeLine from "./TimeLine"
 import Container from '../projects/Container'
 import Carrousel from "../Carrousel"
-import Carro from "../../Restaurante/components/Carro"
+import ProgressBar from "../ProgressBar"
 import data from "../../data.json"
-
-const introCards = [
-  {
-    title: "Passion",
-    description: "Self-taught programmer with curiosity since childhood.",
-    image: "images/Passion.png"
-  },
-  {
-    title: "Work Ethic",
-    description: "Hardworking and disciplined, focused on delivering results.",
-    image: "images/WorkEthic.png"
-  },
-  {
-    title: "Team Player",
-    description: "Thrives both independently and in group environments.",
-    image: "images/TeamPlayer.png"
-  },
-  {
-    title: "AI-Powered",
-    description: "I leverage AI tools like ChatGPT and Copilot to boost productivity and code quality.",
-    image: "images/AI.png"
-  },
-  {
-    title: "Creative Problem Solver",
-    description: "I often find 'unconventional' solutions that others might overlook.",
-    image: "images/CreativeThinking.png"
-  },
-  {
-    title: "Methodical & Results-Oriented",
-    description: "I approach work with discipline and clear focus on achieving goals.",
-    image: "images/Methodical.png"
-  }
-]
-
-const ProfessionalExperience = [
-  {
-    time: "March 2016",
-    description: "I initiated studying Software develpent in college. Since I was a " +
-              "little kid I wanted to be a software developer to create lots of amazing " +
-              "things and I was starting to achieve it."
-  },
-  {
-    time: "April 2019",
-    description: "I got my first full-time job as a customer service representative, " +
-              "since this moment I have had multiple jobs until the present."
-  },
-  {
-    time: "2020",
-    description: "The pandemic started, it became very difficult to continue my carrer " +
-              "in college. I had to stop stuying to continue working."
-  },
-  {
-    time: "June 2021",
-    description: "I took very seriously my goal to be a developer and initiated studying " +
-              "as a self-taught web developer and knew a lot of technologies in the web " +
-              "development world as Django, Flask, Agular, Vue, React and also initiated " +
-              "getting to know the databases as SQL and MongoDB."
-  },
-  {
-    time: "December 2021 - March 2023",
-    description: "QA analyst in Konrad Group: I Helped with system issues with a " +
-              "web and mobile application. Checking it to see the releases were in a " +
-              "good status to released them." +
-              "\nI also had to replicate customer issues to find the problem they " +
-              "were having in the application and forward the issue to the developers."
-  },
-  {
-    time: "August 2025",
-    description: "Besides my knowledge as a sel-taught developer I wanted to continue with " +
-              "my college carrer. I'm currently finishing college to adquire my title."
-  }
-]
-
-const certificationsData = [
-  {
-    title: "Build Apps Using React: Introducing React for Web Applications",
-    company: "Skillsoft",
-    date: "Aug. 2023",
-    credentialId: "5523621",
-    imagePath: "/images/certifications/Build Apps Using React Introducing React for Web Applications.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "Build Apps Using React: Local Machine & Online Playgrounds",
-    company: "Skillsoft",
-    date: "Aug. 2023",
-    credentialId: "5523692",
-    imagePath: "/images/certifications/Build Apps Using React Local Machine & Online Playgrounds.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "Navigating Software Testing Tools: Types of Software Testing Tools",
-    company: "Skillsoft",
-    date: "Aug. 2023",
-    credentialId: "5509961",
-    imagePath: "/images/certifications/Navigating Software Testing Tools Types of Software Testing Tools.png",
-    skills: "Computer Science"
-  },
-  {
-    title: ".NET Development with Visual Studio",
-    company: "Skillsoft",
-    date: "Jul. 2023",
-    credentialId: "5421308",
-    imagePath: "/images/certifications/NET Development with Visual Studio.png",
-    skills: "C# · .NET Framework · Computer Science"
-  },
-  {
-    title: "ASP.NET MVC Web Applications: Introduction",
-    company: "Skillsoft",
-    date: "Jul. 2023",
-    credentialId: "5509907",
-    imagePath: "/images/certifications/ASP.NET MVC Web Applications Introduction.png",
-    skills: "C# · .NET Framework · Computer Science"
-  },
-  {
-    title: "HTML5 with JavaScript & CSS3: Advanced CSS",
-    company: "Skillsoft",
-    date: "Jul. 2023",
-    credentialId: "5351755",
-    imagePath: "/images/certifications/HTML5 with JavaScript & CSS3 Advanced CSS.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "MEAN Stack Development",
-    company: "Skillsoft",
-    date: "Jul. 2023",
-    credentialId: "5313125",
-    imagePath: "/images/certifications/MEAN Stack Development.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "MongoDB Aggregation",
-    company: "Skillsoft",
-    date: "Jul. 2023",
-    credentialId: "5367339",
-    imagePath: "/images/certifications/MongoDB Aggregation.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "MongoDB Querying",
-    company: "Skillsoft",
-    date: "Jul. 2023",
-    credentialId: "5302759",
-    imagePath: "/images/certifications/MongoDB Querying.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "REST API with Java: REST APIs with POSTMAN & CRUD",
-    company: "Skillsoft",
-    date: "Jul. 2023",
-    credentialId: "5367975",
-    imagePath: "/images/certifications/REST API with Java REST APIs with POSTMAN & CRUD.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "AWS Developer Associate 2022: Amazon Elastic Compute Cloud (EC2)",
-    company: "Skillsoft",
-    date: "Jun. 2023",
-    credentialId: "5010674",
-    imagePath: "/images/certifications/AWS Developer Associate 2022 Amazon Elastic Compute Cloud (EC2).png",
-    skills: "Computer Science · Amazon Web Services (AWS)"
-  },
-  {
-    title: "Introduction to Git",
-    company: "Skillsoft",
-    date: "Jun. 2023",
-    credentialId: "5086974",
-    imagePath: "/images/certifications/Introduction to Git.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "Jenkins for DevOps: The Basics of Jenkins",
-    company: "Skillsoft",
-    date: "Jun. 2023",
-    credentialId: "5073564",
-    imagePath: "/images/certifications/Jenkins for DevOps The Basics of Jenkins.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "Scrum Foundation: Scrum Certification & the Scrum Guide",
-    company: "Skillsoft",
-    date: "Jun. 2023",
-    credentialId: "5021856",
-    imagePath: "/images/certifications/Scrum Foundation Scrum Certification & the Scrum Guide.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "Scrum Toolbox: Jira for Scrum",
-    company: "Skillsoft",
-    date: "Jun. 2023",
-    credentialId: "5042690",
-    imagePath: "/images/certifications/Scrum Toolbox Jira for Scrum.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "Secure Programmer: Software Testing",
-    company: "Skillsoft",
-    date: "Jun. 2023",
-    credentialId: "5023254",
-    imagePath: "/images/certifications/Secure Programmer Software Testing.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "Working with Git",
-    company: "Skillsoft",
-    date: "Jun. 2023",
-    credentialId: "5102118",
-    imagePath: "/images/certifications/Working with Git.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "The Language of DevOps: DevOps Tools & Processes",
-    company: "Skillsoft",
-    date: "May. 2023",
-    credentialId: "4804472",
-    imagePath: "/images/certifications/The Language of DevOps DevOps Tools & Processes.png",
-    skills: "Computer Science"
-  },
-  {
-    title: "Python without Borders: HTML, CSS, Flask and MySQL",
-    company: "Hola Mundo",
-    date: "Nov. 2021",
-    credentialId: "UC-05293651-db5c-42f6-ad31-a2172db20bad",
-    imagePath: "/images/certifications/Python sin fronteras HTML, CSS, Flask y MySQL.jpg",
-    skills: "HTML5 · Front-end Coding · Computer Science · Git · Design Patterns"
-  },
-]
-
-const skills = [
-  {
-    name: "React",
-    icon: "/images/skills/React.svg",
-    description: "Frontend library for building UI components."
-  },
-  {
-    name: "JavaScript",
-    icon: "/images/skills/JavaScript.svg",
-    description: "Dynamic programming language for web development."
-  },
-  {
-    name: "MongoDB",
-    icon: "/images/skills/MongoDB.svg",
-    description: "NoSQL database for scalable and flexible applications."
-  },
-  {
-    name: "HTML5",
-    icon: "/images/skills/HTML5.svg",
-    description: "Markup language for structuring web content."
-  },
-  {
-    name: "CSS3",
-    icon: "/images/skills/CSS3.svg",
-    description: "Style sheet language for designing web pages."
-  },
-  {
-    name: "Git",
-    icon: "/images/skills/Git.svg",
-    description: "Version control system for tracking code changes."
-  },
-  {
-    name: "Node.js",
-    icon: "/images/skills/Nodejs.svg",
-    description: "JavaScript runtime for building scalable backend applications."
-  },
-  {
-    name: "Express",
-    icon: "/images/skills/Express.svg",
-    description: "Web framework for Node.js to build APIs and web servers."
-  }
-]
-
-const interestsCards = [
-  {
-    title: "Reading",
-    description: "Exploring novels, especially sci-fi and fantasy worlds.",
-    image: "images/Interests/Reading.png"
-  },
-  {
-    title: "Gaming",
-    description: "Immersing in video games for fun and inspiration.",
-    image: "images/Interests/Gaming.png"
-  },
-  {
-    title: "Programming",
-    description: "Building projects and experimenting with code as a hobby.",
-    image: "images/Interests/Programming.png"
-  }
-]
-
-const ProfessionalGoals = [
-  {
-    time: "Short-term",
-    description: "Secure a position as a web developer and contribute to impactful projects while continuing to strengthen my technical expertise."
-  },
-  {
-    time: "Mid-term",
-    description: "Advance within the company by taking on more complex projects, collaborating with cross-functional teams, and expanding my leadership skills."
-  },
-  {
-    time: "Long-term",
-    description: "Become a highly skilled senior developer recognized for delivering efficient, scalable solutions and mentoring junior developers."
-  }
-]
 
 const StyledLink = styled.a`
   color: #007bff;
@@ -390,9 +87,9 @@ const AboutPage = () => {
     <AboutPageContainer>
       <h1 style={{ fontSize: '3rem' }}>About Me</h1>
       <SectionTitle>Brief Introduction</SectionTitle>
-        <Container cards={introCards}/>
+        <Container cards={data.introCards}/>
       <SectionTitle>Professional Experience</SectionTitle>
-        <TimeLine timestamps={ProfessionalExperience}/>
+        <TimeLine timestamps={data.ProfessionalExperience}/>
       <SectionTitle>Education</SectionTitle>
         <ul>
           <li>🏫 Bachelor's degree in high school education at "Liceo de Curridabat". 🧠</li>
@@ -401,7 +98,7 @@ const AboutPage = () => {
         </ul>
        <SectionTitle>Certifications</SectionTitle>
        <Cert>
-       {certificationsData.map((certification, index) => (
+       {data.certificationsData.map((certification, index) => (
          <Certification
            key={index}
            title={certification.title}
@@ -414,7 +111,7 @@ const AboutPage = () => {
        ))}</Cert>
        <SectionTitle>Skills</SectionTitle>
         <Grid>
-          {skills.map(s => (
+          {data.skills.map(s => (
             <Card key={s.name} aria-label={s.name}>
             <Icon src={s.icon} alt={s.name} />
             <div>
@@ -425,13 +122,17 @@ const AboutPage = () => {
           ))}
         </Grid>
       <SectionTitle>Interests</SectionTitle>
-      <Carrousel cards={interestsCards}/>
+      <Carrousel cards={data.interestsCards}/>
       <SectionTitle>Professional Goals</SectionTitle>
-        <TimeLine timestamps={ProfessionalGoals}/>
+        <TimeLine timestamps={data.ProfessionalGoals}/>
       <SectionTitle>Languages</SectionTitle>
-      <SectionText>
-        I'm fluent in both English and Spanish, with strong spoken and written communication skills in both languages.
-      </SectionText>
+      {data.Languages.map((language, index) => (
+        <ProgressBar
+          key={index}
+          name={language.name}
+          progress={language.progress}
+        />
+      ))}
    </AboutPageContainer>
   )
 }
