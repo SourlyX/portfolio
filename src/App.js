@@ -57,7 +57,7 @@ function App() {
         }/>
         <Route path="/about" element={<About />} />
         <Route path="*"  element={<PageNotFound />} />
-        <Route path="/projects/*" element={<Container cards={data.myProyects}  text={"Go to project"} title="Projects"/>} />
+        <Route path="/projects/*" element={<Container cards={data.myProjects}  text={"Go to project"} title="Projects"/>} />
         <Route path="/projects/to-do-list" element={<ToDoList todos={todos} setTodos={setTodos}/>}/>
         <Route path="/projects/restaurante" element={<Restarurante/>}/>
         <Route path="/projects/pokedex" element={<Pokedex/>}/>
