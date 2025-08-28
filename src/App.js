@@ -9,7 +9,7 @@ import PageNotFound from "./components/routes/NotFound"
 import LandingPage from "./components/routes/LandingPage"
 import ScrollToTop from "./components/ScrollToTop"
 import ToDoList from "./components/projects/ToDoList"
-import Restarurante from "./components/projects/Restaurante/Restaurante"
+import Restarurante from "./Restaurante/Restaurante"
 import Pokedex from "./components/projects/pokeapi/Pokedex"
 import data from "./data.json"
 import "./index.css"
@@ -59,7 +59,7 @@ function App() {
         <Route path="*"  element={<PageNotFound />} />
         <Route path="/projects/*" element={<Container cards={data.myProjects}  text={"Go to project"} title="Projects"/>} />
         <Route path="/projects/to-do-list" element={<ToDoList todos={todos} setTodos={setTodos}/>}/>
-        <Route path="/projects/restaurante" element={<Restarurante/>}/>
+        <Route path="/projects/restaurant" element={<Restarurante/>}/>
         <Route path="/projects/pokedex" element={<Pokedex/>}/>
       </Routes>
       <Contact id="contact" ref={contactRef} />
