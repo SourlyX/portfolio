@@ -70,7 +70,7 @@
       "image": "images/projects/restaurant.png",
       "title": "Restaurant",
       "description": "This project is a restaurant management app built with React, designed to assist waiters in taking customer orders efficiently. The app allows staff to add orders directly to the order list, streamlining the ordering process. It is connected to a Node.js backend, ensuring real-time updates between the front and back end (In menu items, for example). However, some functionalities, like saving completed orders, are still under development. This project highlights my skills in building responsive front-end applications with backend integration to improve day-to-day operations.",
-      "url": "restaurante",
+      "url": "restaurant",
       "inDevelopment": false
     },
     {
