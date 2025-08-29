@@ -109,7 +109,7 @@ const ToDoList = ({ todos, setTodos }) => {
             />
             <Text $active={todo.active}>{todo.name}</Text>
             <Bin
-              src="/images/restaurante/garbage.png"
+              src="/productos/garbage.png"
               alt="Garbage Icon"
               onClick={() => removeTodo(index)}/>
           </Todo>
