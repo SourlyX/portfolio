@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop"
 import ToDoList from "./components/projects/ToDoList"
 import Restarurante from "./components/routes/restaurant/Restaurante"
 import Pokedex from "./components/projects/pokeapi/Pokedex"
+import Expenses from "./components/projects/expenses/Expenses"
 import data from "./data.json"
 import "./index.css"
 import { HelmetProvider } from "react-helmet-async"
@@ -28,13 +29,30 @@ function App() {
 
   const contactRef = useRef(null)
 
+  const [income, setIncome] = useState([
+    {type: "Salary", amount: 283134},
+    {type: "Total", amount: 283134}
+  ])
+
+  const [expenses, setExpenses] = useState([
+    {type: "Dwelling", amount: 140000},
+    {type: "Telephone Bill", amount: 44000},
+    {type: "Internet Bill", amount: 29000},
+    {type: "Education", amount: 27000},
+    {type: "Pablo", amount: 5000},
+    {type: "Padre", amount: 5000},
+    {type: "Jeremy", amount: 20000},
+    {type: "Ernesto", amount: 29000},
+    {type: "Total", amount: 213000}
+  ])
+
   const [todos, setTodos] = useState([
     {name: "Something", active: true},
     {name: "Something 2", active: true},
     {name: "buy hotcakes", active: true},
-    {name: "Go to the supermarket", active: true},
-    {name: "Buy more hotcakes", active: true},
-    {name: "Fly like superman", active: true},
+    {name: "Go to the supermarket", active: false},
+    {name: "Buy more hotcakes", active: false},
+    {name: "Fly like superman", active: false},
     {name: "Buy some eggos", active: true},
   ])
   
@@ -61,8 +79,9 @@ function App() {
         <Route path="/projects/to-do-list" element={<ToDoList todos={todos} setTodos={setTodos}/>}/>
         <Route path="/projects/restaurant" element={<Restarurante/>}/>
         <Route path="/projects/pokedex" element={<Pokedex/>}/>
+        <Route path="/projects/gastos" element={<Expenses income={income} setIncome={setIncome} expenses={expenses} setExpenses={setExpenses}/>}/>
       </Routes>
-      <Contact id="contact" ref={contactRef} />
+      <Contact id="contact" ref={contactRef}/>
       <Footer/>
     </MainApp>
   )

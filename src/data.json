@@ -86,6 +86,27 @@
       "description": "This project is a Pokédex-style app built with React that uses the PokéAPI to display detailed information about various Pokémon. Users can browse, search, and explore stats, abilities, and types for each Pokémon in a responsive and visually appealing interface. The app focuses entirely on front-end functionality, fetching data dynamically from the API. It showcases my ability to work with external APIs and create interactive user experiences.",
       "url": "pokedex",
       "inDevelopment": false
+    },
+    {
+      "image": "images/projects/development.jpeg",
+      "title": "Recipes App",
+      "description": "This project is a Pokédex-style app built with React that uses the PokéAPI to display detailed information about various Pokémon. Users can browse, search, and explore stats, abilities, and types for each Pokémon in a responsive and visually appealing interface. The app focuses entirely on front-end functionality, fetching data dynamically from the API. It showcases my ability to work with external APIs and create interactive user experiences.",
+      "url": "recetas",
+      "inDevelopment": true
+    },
+    {
+      "image": "images/projects/income&expense.png",
+      "title": "Income & Expense Tracker",
+      "description": "An advanced web application that allows users to manage and compare their monthly incomes and expenses. Users can enter recurring payments, monthly salary, other income sources, and dividends, as well as calculate overtime pay and deductions for absences or sick days. The app provides a dynamic overview of finances with interactive components built in React. Some features are still under development, making it a continuously evolving tool for personal financial planning.",
+      "url": "gastos",
+      "inDevelopment": false
+    },
+    {
+      "image": "images/projects/development.jpeg",
+      "title": "Sticky Notes",
+      "description": "This project is a Pokédex-style app built with React that uses the PokéAPI to display detailed information about various Pokémon. Users can browse, search, and explore stats, abilities, and types for each Pokémon in a responsive and visually appealing interface. The app focuses entirely on front-end functionality, fetching data dynamically from the API. It showcases my ability to work with external APIs and create interactive user experiences.",
+      "url": "notas",
+      "inDevelopment": true
     }
   ],
 
