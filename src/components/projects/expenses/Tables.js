@@ -82,10 +82,8 @@ const Tables = ({ income, expenses, handleDelete }) =>{
               </TableCell>
             </TableRow>
 
-              {/* Mapeamos el array 'breakDown' para crear las filas de detalles */}
               {target.breakDown.map((item, idx) => (
                 <TableRow key={idx}>
-                  {/* Añadimos padding para la indentación visual */}
                   <TableCell style={{ paddingLeft: '30px', color: '#b0bec5' }}>{item.label}</TableCell>
                   <TableCell style={{ textAlign: 'right', color: '#b0bec5' }}>{"₡" + parseFloat(item.amount).toFixed(2)}</TableCell>
                 </TableRow>
