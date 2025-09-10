@@ -30,8 +30,8 @@ function App() {
   const contactRef = useRef(null)
 
   const [income, setIncome] = useState([
-    {type: "Salary", amount: 283134},
-    {type: "Total", amount: 283134}
+    {type: "Net Salary", amount: 0},
+    {type: "Total", amount: 0}
   ])
 
   const [expenses, setExpenses] = useState([
@@ -39,10 +39,6 @@ function App() {
     {type: "Telephone Bill", amount: 44000},
     {type: "Internet Bill", amount: 29000},
     {type: "Education", amount: 27000},
-    {type: "Pablo", amount: 5000},
-    {type: "Padre", amount: 5000},
-    {type: "Jeremy", amount: 20000},
-    {type: "Ernesto", amount: 29000},
     {type: "Total", amount: 213000}
   ])
 
@@ -79,7 +75,7 @@ function App() {
         <Route path="/projects/to-do-list" element={<ToDoList todos={todos} setTodos={setTodos}/>}/>
         <Route path="/projects/restaurant" element={<Restarurante/>}/>
         <Route path="/projects/pokedex" element={<Pokedex/>}/>
-        <Route path="/projects/gastos" element={<Expenses income={income} setIncome={setIncome} expenses={expenses} setExpenses={setExpenses}/>}/>
+        <Route path="/projects/incomes&expenses" element={<Expenses income={income} setIncome={setIncome} expenses={expenses} setExpenses={setExpenses}/>}/>
       </Routes>
       <Contact id="contact" ref={contactRef}/>
       <Footer/>

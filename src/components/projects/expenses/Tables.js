@@ -1,3 +1,5 @@
+import React from "react"
+import { list } from "postcss"
 import styled from "styled-components"
 
 const TablesContainer = styled.div`
@@ -68,25 +70,49 @@ const Tables = ({ income, expenses, handleDelete }) =>{
               <TableCell>Amout</TableCell>
             </TableRow>
           </TableHeader>
-            {income.map((target) => (
-              <TableRow key={`${target.type}-${target.amount}`}>
-                <TableCell>{target.type}</TableCell>
-                <TableCell 
-                style={{ 
-                  display: "flex", 
-                  flexDirection: "row", 
-                  justifyContent: "space-between", 
-                  alignItems: "center" 
-                }}>{"₡" + target.amount}
-                {target.type !== "Total" && (
-                  <Bin
-                    src={`${process.env.PUBLIC_URL}/productos/garbage.png`}
-                    alt="Garbage Icon"
-                    onClick={() => handleDelete(income, target)}
-                    />
-                  )}</TableCell>
-              </TableRow>
-            ))}
+          <tbody>
+          {income.map((target) => {
+            if (target.type === "Net Salary" && target.breakDown) {
+              return (
+              <React.Fragment key={target.type}>
+            <TableRow>
+              <TableCell><strong>Net Salary</strong></TableCell>
+              <TableCell style={{ textAlign: 'right' }}>
+                <strong>{"₡" + parseFloat(target.amount).toFixed(2)}</strong>
+              </TableCell>
+            </TableRow>
+
+              {/* Mapeamos el array 'breakDown' para crear las filas de detalles */}
+              {target.breakDown.map((item, idx) => (
+                <TableRow key={idx}>
+                  {/* Añadimos padding para la indentación visual */}
+                  <TableCell style={{ paddingLeft: '30px', color: '#b0bec5' }}>{item.label}</TableCell>
+                  <TableCell style={{ textAlign: 'right', color: '#b0bec5' }}>{"₡" + parseFloat(item.amount).toFixed(2)}</TableCell>
+                </TableRow>
+              ))}
+            </React.Fragment>
+          )
+        }
+
+              // CASO 2: Si el objeto es el Total, generamos una fila simple y en negrita.
+              if (target.type === "Total") {
+                return (
+                  <TableRow key={target.type}>
+                    <TableCell><strong>{target.type}</strong></TableCell>
+                    <TableCell style={{ textAlign: 'right' }}><strong>{"₡" + target.amount}</strong></TableCell>
+                  </TableRow>
+                )
+              }
+
+              // (Opcional) Para otros tipos de ingresos que no tienen desglose
+              return (
+                <TableRow key={target.type}>
+                  <TableCell>{target.type}</TableCell>
+                  <TableCell style={{ textAlign: 'right' }}>{"₡" + target.amount}</TableCell>
+                </TableRow>
+              )
+          })}
+          </tbody>
         </StyledTable>
       </TableContainer>
 
@@ -99,6 +125,7 @@ const Tables = ({ income, expenses, handleDelete }) =>{
               <TableCell>Amount</TableCell>
             </TableRow>
           </TableHeader>
+            <tbody>
             {expenses.map((target) => (
               <TableRow key={`${target.type}-${target.amount}`}>
                 <TableCell>{target.type}</TableCell>
@@ -109,7 +136,7 @@ const Tables = ({ income, expenses, handleDelete }) =>{
                   justifyContent: "space-between", 
                   alignItems: "center" 
                 }}>{"₡" + target.amount}
-                {target.type !== "Total" && (
+                {(target.type !== "Total" && target.type !=="Salary") && (
                   <Bin
                     src={`${process.env.PUBLIC_URL}/productos/garbage.png`}
                     alt="Garbage Icon"
@@ -118,6 +145,7 @@ const Tables = ({ income, expenses, handleDelete }) =>{
                   )}</TableCell>
               </TableRow>
             ))}
+            </tbody>
         </StyledTable>
       </TableContainer>
     </TablesContainer>
@@ -131,6 +159,7 @@ const Tables = ({ income, expenses, handleDelete }) =>{
             <TableCell>Amount</TableCell>
           </TableRow>
         </TableHeader>
+        <tbody>
         <TableRow>
           <TableCell>Incomes</TableCell>
           <TableCell>{"₡" + income.at(-1).amount}</TableCell>
@@ -143,6 +172,7 @@ const Tables = ({ income, expenses, handleDelete }) =>{
           <TableCell>Total</TableCell>
           <TableCell>{"₡" + (income.at(-1).amount-expenses.at(-1).amount).toString()}</TableCell>
         </TableRow>
+        </tbody>
       </StyledTable>
     </TableContainer>
     </>

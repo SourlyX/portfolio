@@ -97,8 +97,8 @@
     {
       "image": "images/projects/income&expense.png",
       "title": "Income & Expense Tracker",
-      "description": "An advanced web application that allows users to manage and compare their monthly incomes and expenses. Users can enter recurring payments, monthly salary, other income sources, and dividends, as well as calculate overtime pay and deductions for absences or sick days. The app provides a dynamic overview of finances with interactive components built in React. Some features are still under development, making it a continuously evolving tool for personal financial planning.",
-      "url": "gastos",
+      "description": "A lightweight application that allows users to record expenses by category, amount, and date. The data updates dynamically, displaying totals and summaries to visualize spending distribution. A simple but functional CRUD project showcasing form handling, state management, and dynamic calculations in React.",
+      "url": "incomes&expenses",
       "inDevelopment": false
     },
     {

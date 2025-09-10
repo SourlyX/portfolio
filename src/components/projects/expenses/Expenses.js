@@ -1,9 +1,10 @@
 import { useState } from "react"
 import Tables from "./Tables"
+import IncomeFlow from "./IncomeFlow"
 import styled from "styled-components"
 
 const Container = styled.div`
-  margin-top: 1.6rem;
+  margin-top: 2.5rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -11,9 +12,11 @@ const Container = styled.div`
 `
 
 const IncomeContainer = styled.div`
+  margin: 5px;
 `
 
 const ExpenseContainer = styled.div`
+  margin: 5px;
 `
 
 const Expenses = ({ income, setIncome, expenses, setExpenses }) => {
@@ -97,12 +100,11 @@ return (
   <Container>
     <IncomeContainer>
       <select
-        placeholder="New Income"
         value={incomeType}
         style={{ height: "35px", width: "150px", borderRadius: "10px", marginRight: "10px" }}
         onChange={(e) => setIncomeType(e.target.value)}
       >
-        {incomeOptions.map((income) =>(
+        {incomeOptions.map((income) => (
           <option key={income}>{income}</option>
         ))}
       </select>
@@ -117,12 +119,11 @@ return (
     </IncomeContainer>
     <ExpenseContainer>
       <select
-        placeholder="New Expense"
         value={expenseType}
         style={{ height: "35px", width: "150px", borderRadius: "10px", marginRight: "10px" }}
       onChange={(e) => setExpenseType(e.target.value)}
       >
-        {expenseOptions.map((income) =>(
+        {expenseOptions.map((income) => (
           <option key={income}>{income}</option>
         ))}
       </select>
@@ -135,6 +136,8 @@ return (
         onKeyDown={(e) => e.key === "Enter" && addExpense(newExpense)}
       />
     </ExpenseContainer>
+
+    <IncomeFlow income={income} setIncome={setIncome}/>
     
     <Tables income={income} expenses={expenses} handleDelete={handleDelete}/>
 
