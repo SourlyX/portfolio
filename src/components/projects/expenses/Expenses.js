@@ -48,7 +48,7 @@ const Expenses = ({ income, setIncome, expenses, setExpenses }) => {
     const currentIncomes = income.slice(0, -1)
     let total = income.at(-1)
     const updatedIncomes = [...currentIncomes, newIncomeObject]
-    total.amount = total.amount + newIncomeObject.amount
+    total.amount = parseFloat(total.amount) + parseFloat(newIncomeObject.amount)
     setIncome([...updatedIncomes, total])
     setNewIncome("")
   }

@@ -1,5 +1,4 @@
 import React from "react"
-import { list } from "postcss"
 import styled from "styled-components"
 
 const TablesContainer = styled.div`
@@ -74,39 +73,46 @@ const Tables = ({ income, expenses, handleDelete }) =>{
           {income.map((target) => {
             if (target.type === "Net Salary" && target.breakDown) {
               return (
-              <React.Fragment key={target.type}>
-            <TableRow>
-              <TableCell><strong>Net Salary</strong></TableCell>
-              <TableCell style={{ textAlign: 'right' }}>
-                <strong>{"₡" + parseFloat(target.amount).toFixed(2)}</strong>
-              </TableCell>
-            </TableRow>
-
-              {target.breakDown.map((item, idx) => (
-                <TableRow key={idx}>
-                  <TableCell style={{ paddingLeft: '30px', color: '#b0bec5' }}>{item.label}</TableCell>
-                  <TableCell style={{ textAlign: 'right', color: '#b0bec5' }}>{"₡" + parseFloat(item.amount).toFixed(2)}</TableCell>
-                </TableRow>
-              ))}
-            </React.Fragment>
-          )
-        }
-
-              // CASO 2: Si el objeto es el Total, generamos una fila simple y en negrita.
-              if (target.type === "Total") {
-                return (
-                  <TableRow key={target.type}>
-                    <TableCell><strong>{target.type}</strong></TableCell>
-                    <TableCell style={{ textAlign: 'right' }}><strong>{"₡" + target.amount}</strong></TableCell>
+                <React.Fragment key={target.type}>
+                  <TableRow>
+                    <TableCell><strong>Net Salary</strong></TableCell>
+                    <TableCell style={{ textAlign: 'right' }}><strong>{"₡" + parseFloat(target.amount).toFixed(2)}</strong></TableCell>
                   </TableRow>
-                )
-              }
 
-              // (Opcional) Para otros tipos de ingresos que no tienen desglose
+                {target.breakDown.map((item, idx) => (
+                  <TableRow key={idx}>
+                    <TableCell style={{ paddingLeft: '30px', color: '#b0bec5' }}>{item.label}</TableCell>
+                    <TableCell style={{ textAlign: 'right', color: '#b0bec5' }}>{"₡" + parseFloat(item.amount).toFixed(2)}</TableCell>
+                  </TableRow>
+                ))}
+                </React.Fragment>
+              )
+            }
+
+            if (target.type === "Total") {
+              return (
+                <TableRow key={target.type}>
+                  <TableCell><strong>{target.type}</strong></TableCell>
+                  <TableCell style={{ textAlign: 'right' }}><strong>{"₡" + target.amount}</strong></TableCell>
+                </TableRow>
+              )
+            }
+
               return (
                 <TableRow key={target.type}>
                   <TableCell>{target.type}</TableCell>
-                  <TableCell style={{ textAlign: 'right' }}>{"₡" + target.amount}</TableCell>
+                  <TableCell 
+                    style={{ 
+                      display: "flex", 
+                      flexDirection: "row", 
+                      justifyContent: "space-between", 
+                      alignItems: "center" 
+                    }}>{"₡" + target.amount}
+                    <Bin
+                      src={`${process.env.PUBLIC_URL}/productos/garbage.png`}
+                      alt="Garbage Icon"
+                      onClick={() => handleDelete(expenses, target)}
+                    /></TableCell>
                 </TableRow>
               )
           })}
@@ -128,18 +134,18 @@ const Tables = ({ income, expenses, handleDelete }) =>{
               <TableRow key={`${target.type}-${target.amount}`}>
                 <TableCell>{target.type}</TableCell>
                 <TableCell 
-                style={{ 
-                  display: "flex", 
-                  flexDirection: "row", 
-                  justifyContent: "space-between", 
-                  alignItems: "center" 
-                }}>{"₡" + target.amount}
-                {(target.type !== "Total" && target.type !=="Salary") && (
-                  <Bin
-                    src={`${process.env.PUBLIC_URL}/productos/garbage.png`}
-                    alt="Garbage Icon"
-                    onClick={() => handleDelete(expenses, target)}
-                    />
+                  style={{ 
+                    display: "flex", 
+                    flexDirection: "row", 
+                    justifyContent: "space-between", 
+                    alignItems: "center" 
+                  }}>{"₡" + target.amount}
+                  {(target.type !== "Total" && target.type !=="Salary") && (
+                    <Bin
+                      src={`${process.env.PUBLIC_URL}/productos/garbage.png`}
+                      alt="Garbage Icon"
+                      onClick={() => handleDelete(expenses, target)}
+                      />
                   )}</TableCell>
               </TableRow>
             ))}
