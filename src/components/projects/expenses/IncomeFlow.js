@@ -50,7 +50,7 @@ const IncomeFlow = ({ income, setIncome }) => {
     const minutePay = newSalary/15/6/60
     const vtoDeduction = minutePay*VTO
     const otAddition = minutePay*OT*1.5
-    const netSalary = (newSalary-vtoDeduction+otAddition)-newSalary*(taxes/100)
+    const netSalary = (newSalary-vtoDeduction+otAddition)-newSalary*(taxes/100)-(otAddition?otAddition*(taxes/100):0)
     
     if(taxes > 100 || taxes < 0){
       alert("Please input valid taxes")
@@ -82,7 +82,11 @@ const IncomeFlow = ({ income, setIncome }) => {
       breakdownDetails.push({ label: `- Unpaid Time (${VTO} min)`, amount: vtoDeduction })
     }
     if(condition3){
-      breakdownDetails.push({ label: `- Taxes (${taxes}%)`, amount: newSalary*(taxes/100) })
+      if(condition1) {
+        breakdownDetails.push({ label: `Subtotal`, amount: newSalary*(taxes/100)+otAddition*(taxes/100) })
+      }else {
+        breakdownDetails.push({ label: `- Taxes (${taxes}%)`, amount: newSalary*(taxes/100) })
+      }
     }
 
     const oldIncome = income.slice(1)
