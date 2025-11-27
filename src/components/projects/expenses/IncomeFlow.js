@@ -49,8 +49,8 @@ const IncomeFlow = ({ income, setIncome }) => {
   useEffect(() => {
     const minutePay = newSalary/15/6/60
     const vtoDeduction = minutePay*VTO
-    const otAddition = minutePay*OT*1.5
-    const netSalary = (newSalary-vtoDeduction+otAddition)-newSalary*(taxes/100)-(otAddition?otAddition*(taxes/100):0)
+    const otAddition = minutePay*OT*1.5*(taxes/100)
+    const netSalary = (newSalary-vtoDeduction+otAddition)-newSalary*(taxes/100)-(otAddition?otAddition:0)
     
     if(taxes > 100 || taxes < 0){
       alert("Please input valid taxes")
