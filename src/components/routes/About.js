@@ -7,6 +7,7 @@ import ProgressBar from "../ProgressBar"
 import data from "../../data.json"
 
 const AboutPageContainer = styled.div`
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
