@@ -109,7 +109,7 @@ const Tables = ({ income, expenses, handleDelete }) =>{
                       alignItems: "center" 
                     }}>{"₡" + target.amount}
                     <Bin
-                      src={`${process.env.PUBLIC_URL}/productos/garbage.png`}
+                      src={`/productos/garbage.png`}
                       alt="Garbage Icon"
                       onClick={() => handleDelete(expenses, target)}
                     /></TableCell>
@@ -142,7 +142,7 @@ const Tables = ({ income, expenses, handleDelete }) =>{
                   }}>{"₡" + target.amount}
                   {(target.type !== "Total" && target.type !=="Salary") && (
                     <Bin
-                      src={`${process.env.PUBLIC_URL}/productos/garbage.png`}
+                      src={`/productos/garbage.png`}
                       alt="Garbage Icon"
                       onClick={() => handleDelete(expenses, target)}
                       />
