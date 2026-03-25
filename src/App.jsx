@@ -65,8 +65,8 @@ function App() {
         <Route path="/" element={
           <>
             <LandingPage/>
-            {data.techskills && data.techskills.length > 0 && <Container cards={data.techskills} title="Technical Skills" />}
-            {data.softSkills && data.softSkills.length > 0 && <Container cards={data.softSkills} title="Soft Skills" />}
+            <Container cards={data.techskills} title="Technical Skills" />
+            <Container cards={data.softSkills} title="Soft Skills" />
           </>
         }/>
         <Route path="/about" element={<About />} />
